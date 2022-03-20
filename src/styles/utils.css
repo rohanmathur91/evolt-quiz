@@ -18,3 +18,7 @@
 .underline {
 	text-decoration: underline;
 }
+
+.text-gray {
+	color: var(--gray);
+}

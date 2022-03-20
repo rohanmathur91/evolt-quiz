@@ -1,0 +1,4 @@
+.navbar {
+	background-color: inherit;
+	border-bottom: 1px solid var(--secondary-light-color);
+}

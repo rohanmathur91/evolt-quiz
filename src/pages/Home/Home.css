@@ -1,0 +1,31 @@
+.content {
+	max-width: 50rem;
+}
+
+.home-container {
+	height: calc(100vh - 6.4rem);
+}
+
+.cta {
+	color: var(--secondary-hover-color);
+}
+
+.cta:hover {
+	opacity: 0.6;
+}
+
+.login-cta:hover {
+	background: var(--secondary-hover-color);
+}
+
+.primary-cta {
+	background: var(--primary-color);
+}
+
+.material-icons-outlined.cta-icon {
+	font-size: 3rem;
+}
+
+.cta:hover .cta-icon {
+	transform: translateX(10px);
+}
