@@ -6,7 +6,7 @@ import "./Home.css";
 export const Home = () => {
 	return (
 		<>
-			<div class="home-container flex-row items-center content-space-around wrap mt-8 p-2">
+			<div class="home-container flex-row items-center content-space-around wrap p-2">
 				<div class="home-img w-40 mt-3 mx-3 flex-row items-center">
 					<img src={quizHero} alt="quiz" />
 				</div>
