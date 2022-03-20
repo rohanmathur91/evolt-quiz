@@ -13,7 +13,7 @@ export const Home = () => {
 
 				<div class="home-content text-center p-1 m-1 mb-3">
 					<h1>Welcome to evolt quiz!</h1>
-					<h2 class="mt-2 mb-3">Let's see how much you score🤔?</h2>
+					<h2 class="mt-1 mb-3">Let's see how much you score🤔?</h2>
 					<div className="flex-row flex-center">
 						<Link to="/category">
 							<span className="cta py-2 px-4 w-20 font-bold primary-cta rounded-sm flex-row flex-center">
