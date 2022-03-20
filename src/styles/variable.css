@@ -1,0 +1,12 @@
+:root {
+	--gray: #b1b1b1;
+	--white: #ffffff;
+	--hover: #45494d;
+	--primary-color: #fafafa;
+	--secondary-color: #131517;
+	--secondary-light-color: #242628;
+	--secondary-hover-color: #212325;
+	--error-color: #ce3838;
+	--success-color: #1fa650;
+	--navigation-shadow: rgba(0, 0, 0, 0.2);
+}

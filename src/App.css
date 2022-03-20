@@ -1,4 +1,4 @@
-.App {
-  text-align: center;
-}
-
+@import "./styles/reset.css";
+@import "./styles/utils.css";
+@import "./styles/variable.css";
+@import "./styles/common.css";
