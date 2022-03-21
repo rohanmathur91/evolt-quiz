@@ -1,5 +1,5 @@
 .navbar {
-  background-color: inherit;
+  background-color: var(--secondary-color);
   box-shadow: 0 1px 3px 0 var(--navigation-shadow);
 }
 
