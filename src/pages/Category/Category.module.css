@@ -1,0 +1,15 @@
+.card-category {
+  width: 32rem;
+  padding: 1rem;
+  align-self: flex-start;
+  background-color: var(--secondary-light-color);
+}
+
+.category-img {
+  width: 100%;
+  height: 25rem;
+}
+
+.login-cta:hover {
+  background-color: var(--secondary-light-color);
+}
