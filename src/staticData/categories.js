@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
-import health from "../assets/images/health.webp";
-import bigBangTheory from "../assets/images/big-bang-theory.jpg";
-import wildlife from "../assets/images/wildlife.jpg";
+import food from "../assets/images/food.webp";
+import bigBangTheory from "../assets/images/big-bang-theory.webp";
+import wildlife from "../assets/images/wildlife.webp";
 
 export const categories = [
   {
@@ -14,11 +14,11 @@ export const categories = [
   },
   {
     _id: uuid(),
-    alt: "health",
-    image: health,
+    alt: "food",
+    image: food,
     numberOfquestions: 3,
-    category: "Health",
-    title: "Scissors Cuts Paper. Paper Covers Rock. Rock Crushes Lizard.",
+    category: "Food",
+    title: "Food provides us the nutrition we need to survive.",
   },
   {
     _id: uuid(),
@@ -26,6 +26,6 @@ export const categories = [
     image: wildlife,
     numberOfquestions: 3,
     category: "Wildlife",
-    title: "Lets see how much you know about wildlife.",
+    title: "Wildlife helps in maintaining the eco-logical balance of nature.",
   },
 ];
