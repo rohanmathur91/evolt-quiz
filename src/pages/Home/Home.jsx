@@ -1,5 +1,5 @@
 import React from "react";
-import quizHero from "../../assets/quiz.svg";
+import quizHero from "../../assets/images/quiz.svg";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
