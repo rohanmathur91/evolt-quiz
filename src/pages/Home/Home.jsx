@@ -16,9 +16,9 @@ export const Home = () => {
         <div className="text-center p-1 m-1 mb-3">
           <h1>Welcome to evolt quiz!</h1>
           <h2 className="mt-1 mb-3">Let's see how much you score🤔?</h2>
-          <div classNameName="flex-row flex-center">
+          <div className="flex-row flex-center">
             <Link to="/category">
-              <span classNameName="primary-cta cta py-2 px-4 w-20 font-bold rounded-sm flex-row flex-center">
+              <span className="primary-cta cta py-2 px-4 w-20 font-bold rounded-sm flex-row flex-center">
                 Get Started{" "}
                 <span className="cta-icon material-icons-outlined ml-1 transition-3">
                   trending_flat
