@@ -1,19 +1,27 @@
 .cta {
-	color: var(--secondary-hover-color);
+  color: var(--secondary-hover-color);
 }
 
 .cta:hover {
-	opacity: 0.6;
+  opacity: 0.6;
 }
 
 .primary-cta {
-	background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 .cta-icon {
-	font-size: 3rem;
+  font-size: 3rem;
 }
 
 .cta:hover .cta-icon {
-	transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.wrong {
+  color: var(--error-color);
+}
+
+.correct {
+  color: var(--success-color);
 }
