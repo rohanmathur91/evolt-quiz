@@ -1,13 +1,11 @@
 import { v4 as uuid } from "uuid";
-import food from "../assets/images/food.webp";
-import bigBangTheory from "../assets/images/big-bang-theory.webp";
-import wildlife from "../assets/images/wildlife.webp";
 
 export const categories = [
   {
     _id: uuid(),
     alt: "bigBangTheory",
-    image: bigBangTheory,
+    image:
+      "https://res.cloudinary.com/dexubgbx0/image/upload/v1649834636/big-bang-theory_zfuwrx.webp",
     numberOfquestions: 3,
     category: "Shows",
     title: "Scissors Cuts Paper. Paper Covers Rock. Rock Crushes Lizard.",
@@ -15,7 +13,8 @@ export const categories = [
   {
     _id: uuid(),
     alt: "food",
-    image: food,
+    image:
+      "https://res.cloudinary.com/dexubgbx0/image/upload/v1649834638/food_t0ztgt.webp",
     numberOfquestions: 3,
     category: "Food",
     title: "Food provides us the nutrition we need to survive.",
@@ -23,7 +22,8 @@ export const categories = [
   {
     _id: uuid(),
     alt: "wildlife",
-    image: wildlife,
+    image:
+      "https://res.cloudinary.com/dexubgbx0/image/upload/v1649834647/wildlife_txpxpo.webp",
     numberOfquestions: 3,
     category: "Wildlife",
     title: "Wildlife helps in maintaining the eco-logical balance of nature.",
