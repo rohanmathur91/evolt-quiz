@@ -1,5 +1,5 @@
 import React from "react";
-import quizHero from "../../assets/images/quiz.svg";
+import { homeBanner } from "../../staticData";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
@@ -10,7 +10,7 @@ export const Home = () => {
         className={`${styles.home__container} flex-row items-center content-space-around wrap p-2`}
       >
         <div className="w-40 mt-3 mx-3 flex-row items-center">
-          <img src={quizHero} alt="quiz" />
+          <img src={homeBanner} alt="quiz" />
         </div>
 
         <div className="text-center p-1 m-1 mb-3">
