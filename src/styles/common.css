@@ -25,3 +25,7 @@
 .correct {
   color: var(--success-color);
 }
+
+.quiz-container {
+  max-width: 50rem;
+}

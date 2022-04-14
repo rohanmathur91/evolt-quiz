@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Rules.module.css";
 
 export const Rules = () => {
@@ -17,12 +18,12 @@ export const Rules = () => {
         <p className="mb-3 title">3. Only one chance for each answer.</p>
         <p className="title">All The Best.</p>
       </div>
-      <a
+      <Link
+        to="/quiz"
         className="mt-4 mb-2 cta py-1 px-2 font-semibold primary-cta rounded-sm"
-        href="../quiz/quiz.html"
       >
         Let's start
-      </a>
+      </Link>
     </main>
   );
 };
