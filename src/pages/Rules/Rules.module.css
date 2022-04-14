@@ -1,3 +1,11 @@
+.wrong {
+  color: var(--error-color);
+}
+
+.correct {
+  color: var(--success-color);
+}
+
 .content {
   border: 2px solid var(--secondary-light-color);
 }
