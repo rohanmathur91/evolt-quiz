@@ -1,8 +1,10 @@
 import React from "react";
 import { CategoryCard } from "../../components";
-import { categories } from "../../staticData";
+import { useQuiz } from "../../contexts";
 
 export const Category = () => {
+  const { categories } = useQuiz();
+
   return (
     <main className="main-container flex-column items-center">
       <h3 className="mt-3">Quiz Categories</h3>

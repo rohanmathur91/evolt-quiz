@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { quizReducer, quizInitialstate } from "../reducers";
+import { quizReducer, quizInitialstate, SET_CATEGORIES } from "../reducers";
 
 const QuizContext = createContext();
 
@@ -16,7 +16,8 @@ const QuizProvider = ({ children }) => {
         const {
           data: { categories },
         } = await axios.get("/api/categories");
-        console.log(categories);
+
+        quizDispatch({ type: SET_CATEGORIES, payload: categories });
       } catch (error) {
         console.log(error);
       }
