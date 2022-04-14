@@ -3,7 +3,7 @@ import styles from "./Rules.module.css";
 
 export const Rules = () => {
   return (
-    <div className="flex-column items-center mt-4">
+    <main className="main-container flex-column items-center mt-4">
       <h3>Rules</h3>
       <div className={`${styles.content} mt-4 mx-2 p-4 rounded-sm`}>
         <p className="mb-3 title">
@@ -23,6 +23,6 @@ export const Rules = () => {
       >
         Let's start
       </a>
-    </div>
+    </main>
   );
 };

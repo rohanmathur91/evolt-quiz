@@ -2,3 +2,14 @@
 @import "./styles/utils.css";
 @import "./styles/variable.css";
 @import "./styles/common.css";
+
+.app {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 48em) {
+  html {
+    font-size: 54%;
+  }
+}

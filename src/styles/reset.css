@@ -7,8 +7,6 @@
 }
 
 body {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
   font-family: "Inter", sans-serif;
 }
 
@@ -19,10 +17,4 @@ button {
 
 input:focus {
   outline: 2px solid var(--secondary-color);
-}
-
-@media screen and (max-width: 48em) {
-  html {
-    font-size: 54%;
-  }
 }
