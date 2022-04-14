@@ -17,9 +17,9 @@ const quizzes = [
 
 export const Quiz = () => {
   return (
-    <main className="main-container flex-column items-center mt-4 mx-2">
-      <h3 className="text-underline">Quiz Topic</h3>
-      <div className="quiz-container w-100 flex-column items-center mt-4">
+    <main className="main-container flex-column items-center mx-2">
+      <h3 className="text-underline mt-4">Quiz Topic</h3>
+      <div className="quiz-container w-100 flex-column items-center mt-3">
         <Score />
         <CurrentQuestion quiz={quizzes[0]} />
       </div>

@@ -4,8 +4,8 @@ import styles from "./Rules.module.css";
 
 export const Rules = () => {
   return (
-    <main className="main-container flex-column items-center mt-4">
-      <h3>Rules</h3>
+    <main className="main-container flex-column items-center">
+      <h3 className="mt-4">Rules</h3>
       <div className={`${styles.content} mt-4 mx-2 p-4 rounded-sm`}>
         <p className="mb-3 title">
           1. For each <span className="correct title">correct</span> answer gets
