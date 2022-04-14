@@ -35,3 +35,4 @@ CategoryCard.defaultProps = {
   category: "",
   numberOfquestions: 0,
 };
+

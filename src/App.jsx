@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Home, Rules, Category } from "./pages";
 import { Navbar } from "./components";
+import Mockman from "mockman-js";
 import "./App.css";
 
 const App = () => {
