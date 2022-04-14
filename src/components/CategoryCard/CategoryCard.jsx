@@ -27,3 +27,11 @@ export const CategoryCard = ({
     </div>
   );
 };
+
+CategoryCard.defaultProps = {
+  alt: "",
+  image: "",
+  title: "",
+  category: "",
+  numberOfquestions: 0,
+};
