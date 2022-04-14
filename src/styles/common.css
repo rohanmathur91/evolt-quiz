@@ -17,3 +17,11 @@
 .cta:hover .cta-icon {
   transform: translateX(10px);
 }
+
+.wrong {
+  color: var(--error-color);
+}
+
+.correct {
+  color: var(--success-color);
+}

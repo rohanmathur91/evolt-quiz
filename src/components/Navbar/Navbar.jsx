@@ -12,7 +12,7 @@ export const Navbar = () => {
       </Link>
       <Link
         to="/login"
-        className={`${styles.login__cta} transition-2 py-1 px-2 rounded-sm`}
+        className={`${styles.loginCta} transition-2 py-1 px-2 rounded-sm`}
       >
         Login
       </Link>
