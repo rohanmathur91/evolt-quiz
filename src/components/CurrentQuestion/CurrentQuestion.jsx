@@ -3,6 +3,7 @@ import styles from "./CurrentQuestion.module.css";
 
 export const CurrentQuestion = ({ quiz }) => {
   const { question, options } = quiz;
+
   return (
     <>
       <div className="flex-column items-center">
@@ -23,4 +24,11 @@ export const CurrentQuestion = ({ quiz }) => {
       </button>
     </>
   );
+};
+
+CurrentQuestion.defaultProps = {
+  quiz: {
+    question: "",
+    options: [],
+  },
 };
