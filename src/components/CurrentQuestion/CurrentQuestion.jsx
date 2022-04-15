@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../contexts";
-import { SET_CURRENT_QUESTION_INDEX } from "../../reducers";
+import { SET_SCORE, SET_CURRENT_QUESTION_INDEX } from "../../reducers";
 import styles from "./CurrentQuestion.module.css";
 
 export const CurrentQuestion = () => {
   const [clickedOptionId, setClickedOptionId] = useState("");
   const navigate = useNavigate();
-  const { quiz, currentQuestionIndex, quizDispatch } = useQuiz();
+  const { quiz, currentQuestionIndex, score, quizDispatch } = useQuiz();
   const { question, options } = quiz[currentQuestionIndex] ?? {};
 
   const handleOptionClick = (option) => {
     if (!clickedOptionId) {
       setClickedOptionId(option._id);
+
+      quizDispatch({
+        type: SET_SCORE,
+        payload: option.isCorrect ? score + 2 : score - 2,
+      });
 
       setTimeout(() => {
         if (currentQuestionIndex < quiz.length - 1) {
@@ -29,11 +34,13 @@ export const CurrentQuestion = () => {
   };
 
   const handleNextClick = () => {
-    if (currentQuestionIndex < quiz.length) {
+    if (currentQuestionIndex < quiz.length - 1) {
       quizDispatch({
         type: SET_CURRENT_QUESTION_INDEX,
         payload: currentQuestionIndex + 1,
       });
+    } else {
+      navigate("/category");
     }
   };
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuiz } from "../../contexts";
-import { SET_QUIZ, SET_CURRENT_QUESTION_INDEX } from "../../reducers";
+import { INITIALIZE_QUIZ } from "../../reducers";
 import { Score, CurrentQuestion, Loader } from "../../components";
 import { encodedToken } from "../../token";
 
@@ -22,8 +22,7 @@ export const Quiz = () => {
             headers: { authorization: encodedToken },
           });
 
-          quizDispatch({ type: SET_QUIZ, payload: quiz.quiz });
-          quizDispatch({ type: SET_CURRENT_QUESTION_INDEX });
+          quizDispatch({ type: INITIALIZE_QUIZ, payload: quiz.quiz });
           setIsLoading(false);
         } catch (error) {
           console.log(error);
