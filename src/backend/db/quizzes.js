@@ -1,10 +1,5 @@
 import { v4 as uuid } from "uuid";
 
-/**
- * Category Database can be added here.
- * You can add category of your wish with different attributes
- * */
-
 export const quizzes = [
   {
     _id: uuid(),
@@ -14,6 +9,42 @@ export const quizzes = [
     numberOfquestions: 3,
     category: "Shows",
     title: "Scissors Cuts Paper. Paper Covers Rock. Rock Crushes Lizard.",
+    quiz: [
+      {
+        _id: uuid(),
+        question: "Sheldon is which type of scientist?",
+        options: [
+          { _id: uuid(), option: "Experimental physicist", isCorrect: true },
+          { _id: uuid(), option: "Aerospace engineer", isCorrect: false },
+          { _id: uuid(), option: "Microbiologist", isCorrect: false },
+          { _id: uuid(), option: "Theoretical physicist", isCorrect: false },
+        ],
+      },
+      {
+        _id: uuid(),
+        question: "What state is Sheldon originally from?",
+        options: [
+          { _id: uuid(), option: "Houston", isCorrect: false },
+          { _id: uuid(), option: "El Paso", isCorrect: false },
+          { _id: uuid(), option: "Texas", isCorrect: true },
+          { _id: uuid(), option: "Dallas", isCorrect: false },
+        ],
+      },
+      {
+        _id: uuid(),
+        question: "What state is Penny from? ",
+        options: [
+          {
+            _id: uuid(),
+            option: "Omaha",
+            isCorrect: false,
+          },
+          { _id: uuid(), option: "Minneapolis", isCorrect: false },
+          { _id: uuid(), option: "Kansas", isCorrect: false },
+          { _id: uuid(), option: "Nebraska", isCorrect: true },
+        ],
+      },
+    ],
   },
   {
     _id: uuid(),
@@ -23,6 +54,17 @@ export const quizzes = [
     numberOfquestions: 3,
     category: "Food",
     title: "Food provides us the nutrition we need to survive.",
+    quiz: [
+      {
+        question: "Sheldon is which type of scientist?",
+        options: [
+          { _id: uuid(), option: "Experimental physicist", isCorrect: true },
+          { _id: uuid(), option: "Aerospace engineer", isCorrect: false },
+          { _id: uuid(), option: "Microbiologist", isCorrect: false },
+          { _id: uuid(), option: "Theoretical physicist", isCorrect: false },
+        ],
+      },
+    ],
   },
   {
     _id: uuid(),
@@ -32,5 +74,16 @@ export const quizzes = [
     numberOfquestions: 3,
     category: "Wildlife",
     title: "Wildlife helps in maintaining the eco-logical balance of nature.",
+    quiz: [
+      {
+        question: "Sheldon is which type of scientist?",
+        options: [
+          { _id: uuid(), option: "Experimental physicist", isCorrect: true },
+          { _id: uuid(), option: "Aerospace engineer", isCorrect: false },
+          { _id: uuid(), option: "Microbiologist", isCorrect: false },
+          { _id: uuid(), option: "Theoretical physicist", isCorrect: false },
+        ],
+      },
+    ],
   },
 ];
