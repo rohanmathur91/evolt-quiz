@@ -6,3 +6,11 @@
 .answer:hover {
   background-color: var(--hover);
 }
+
+.answer.wrong {
+  background-color: var(--error-color);
+}
+
+.answer.correct {
+  background-color: var(--success-color);
+}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({
+  _id,
   alt,
   image,
   title,
@@ -18,7 +19,7 @@ export const CategoryCard = ({
       <div className="category-footer flex-row items-center">
         <p className="text-gray">{numberOfquestions} Questions</p>
         <Link
-          to="/rules"
+          to={`/rules/${_id}`}
           className="cta primary-cta py-1 px-2 font-bold ml-auto rounded-sm transition-2"
         >
           Take quiz
@@ -29,10 +30,10 @@ export const CategoryCard = ({
 };
 
 CategoryCard.defaultProps = {
+  _id: "",
   alt: "",
   image: "",
   title: "",
   category: "",
   numberOfquestions: 0,
 };
-

@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "./Rules.module.css";
 
 export const Rules = () => {
+  const { quizId } = useParams();
+
   return (
     <main className="main-container flex-column items-center">
       <h3 className="mt-4">Rules</h3>
@@ -19,7 +21,7 @@ export const Rules = () => {
         <p className="title">All The Best.</p>
       </div>
       <Link
-        to="/quiz"
+        to={`/quiz/${quizId}`}
         className="mt-4 mb-2 cta py-1 px-2 font-semibold primary-cta rounded-sm"
       >
         Let's start
