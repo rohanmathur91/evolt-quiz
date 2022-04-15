@@ -1,6 +1,21 @@
 .navbar {
-  background-color: var(--secondary-color);
+  backdrop-filter: blur(5px);
   box-shadow: 0 1px 3px 0 var(--navigation-shadow);
+  background-color: var(--navigation-background-color);
+}
+
+.themeBtn span {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+}
+
+.themeBtn {
+  padding: 4px;
+  border: 1px solid var(--secondary-light-color);
+}
+
+.themeBtn:hover {
+  background: var(--secondary-hover-color);
 }
 
 .loginCta:hover {
