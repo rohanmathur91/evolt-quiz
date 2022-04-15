@@ -23,6 +23,10 @@
   color: var(--gray);
 }
 
+.text-red {
+  color: var(--error-color);
+}
+
 /* continer */
 .main-container {
   height: 100%;

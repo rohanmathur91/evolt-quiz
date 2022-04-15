@@ -1,16 +1,16 @@
-.answer {
+.option {
   color: var(--primary-color);
   background-color: var(--secondary-light-color);
 }
 
-.answer:hover {
+.option:hover {
   background-color: var(--hover);
 }
 
-.answer.wrong {
+.option.wrong {
   background-color: var(--error-color);
 }
 
-.answer.correct {
+.option.correct {
   background-color: var(--success-color);
 }

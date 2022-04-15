@@ -56,6 +56,7 @@ export const quizzes = [
     title: "Food provides us the nutrition we need to survive.",
     quiz: [
       {
+        _id: uuid(),
         question: "Sheldon is which type of scientist?",
         options: [
           { _id: uuid(), option: "Experimental physicist", isCorrect: true },
@@ -76,6 +77,7 @@ export const quizzes = [
     title: "Wildlife helps in maintaining the eco-logical balance of nature.",
     quiz: [
       {
+        _id: uuid(),
         question: "Sheldon is which type of scientist?",
         options: [
           { _id: uuid(), option: "Experimental physicist", isCorrect: true },

@@ -1,12 +1,11 @@
 import {
-  SET_SCORE,
   SET_CATEGORIES,
   INITIALIZE_QUIZ,
   SET_CURRENT_QUESTION_INDEX,
+  SET_SELECTED_OPTION,
 } from "./";
 
 export const quizInitialstate = {
-  score: 0,
   quiz: [],
   categories: [],
   currentQuestionIndex: 0,
@@ -17,9 +16,6 @@ export const quizReducer = (quizState, { type, payload }) => {
     case INITIALIZE_QUIZ:
       return { ...quizState, quiz: payload, currentQuestionIndex: 0, score: 0 };
 
-    case SET_SCORE:
-      return { ...quizState, score: payload };
-
     case SET_CATEGORIES:
       return { ...quizState, categories: payload };
 
@@ -27,6 +23,20 @@ export const quizReducer = (quizState, { type, payload }) => {
       return {
         ...quizState,
         currentQuestionIndex: payload ?? 0,
+      };
+
+    case SET_SELECTED_OPTION:
+      return {
+        ...quizState,
+        quiz: quizState.quiz.map((eachQuiz) =>
+          eachQuiz._id === payload.quizId
+            ? {
+                ...eachQuiz,
+                score: payload.score,
+                selectedOptionId: payload.selectedOptionId,
+              }
+            : eachQuiz
+        ),
       };
 
     default:

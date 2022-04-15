@@ -1,35 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../contexts";
-import { SET_SCORE, SET_CURRENT_QUESTION_INDEX } from "../../reducers";
+import {
+  SET_SELECTED_OPTION,
+  SET_CURRENT_QUESTION_INDEX,
+} from "../../reducers";
 import styles from "./CurrentQuestion.module.css";
 
 export const CurrentQuestion = () => {
-  const [clickedOptionId, setClickedOptionId] = useState("");
   const navigate = useNavigate();
-  const { quiz, currentQuestionIndex, score, quizDispatch } = useQuiz();
-  const { question, options } = quiz[currentQuestionIndex] ?? {};
+  const { quiz, quizDispatch, currentQuestionIndex } = useQuiz();
+  const {
+    options,
+    question,
+    _id: quizId,
+    selectedOptionId,
+  } = quiz[currentQuestionIndex] ?? {};
 
-  const handleOptionClick = (option) => {
-    if (!clickedOptionId) {
-      setClickedOptionId(option._id);
-
+  const handleOptionClick = ({ _id, isCorrect }) => {
+    if (!selectedOptionId) {
       quizDispatch({
-        type: SET_SCORE,
-        payload: option.isCorrect ? score + 2 : score - 2,
+        type: SET_SELECTED_OPTION,
+        payload: {
+          quizId,
+          selectedOptionId: _id,
+          score: isCorrect ? 5 : -5,
+        },
       });
 
       setTimeout(() => {
         if (currentQuestionIndex < quiz.length - 1) {
-          setClickedOptionId("");
           quizDispatch({
             type: SET_CURRENT_QUESTION_INDEX,
             payload: currentQuestionIndex + 1,
           });
         } else {
-          navigate("/category");
+          navigate("/result");
         }
-      }, 500);
+      }, 600);
     }
   };
 
@@ -40,7 +48,7 @@ export const CurrentQuestion = () => {
         payload: currentQuestionIndex + 1,
       });
     } else {
-      navigate("/category");
+      navigate("/result");
     }
   };
 
@@ -52,11 +60,11 @@ export const CurrentQuestion = () => {
           options.map(({ _id, option, isCorrect }) => (
             <button
               key={_id}
-              onClick={() => handleOptionClick({ _id, option, isCorrect })}
-              className={`${styles.answer} ${
-                clickedOptionId && isCorrect ? styles.correct : ""
+              onClick={() => handleOptionClick({ _id, isCorrect })}
+              className={`${styles.option} ${
+                selectedOptionId && isCorrect ? styles.correct : ""
               } ${
-                clickedOptionId && _id === clickedOptionId && !isCorrect
+                selectedOptionId && _id === selectedOptionId && !isCorrect
                   ? styles.wrong
                   : ""
               } w-100 transition-3 p-2 rounded-sm mb-2`}

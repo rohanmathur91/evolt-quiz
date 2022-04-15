@@ -1,0 +1,12 @@
+.option {
+  color: var(--primary-color);
+  background-color: var(--secondary-light-color);
+}
+
+.option.wrong {
+  background-color: var(--error-color);
+}
+
+.option.correct {
+  background-color: var(--success-color);
+}

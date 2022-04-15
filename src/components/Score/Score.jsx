@@ -1,8 +1,10 @@
 import React from "react";
 import { useQuiz } from "../../contexts";
+import { getTotalScore } from "../../utils";
 
 export const Score = () => {
-  const { quiz, score, currentQuestionIndex } = useQuiz();
+  const { quiz, currentQuestionIndex } = useQuiz();
+  const totalScore = getTotalScore(quiz);
 
   return (
     <div className="w-100 flex-row content-space-between">
@@ -11,7 +13,7 @@ export const Score = () => {
         <span className="text-lg font-bold">/{quiz.length}</span>
       </div>
       <div className="text-lg font-bold">
-        Score: <span className="text-xl font-bold">{score}</span>
+        Score: <span className="text-xl font-bold">{totalScore}</span>
       </div>
     </div>
   );
