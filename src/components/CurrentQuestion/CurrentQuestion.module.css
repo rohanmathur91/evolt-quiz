@@ -1,4 +1,5 @@
 .option {
+  text-transform: none;
   color: var(--primary-color);
   background-color: var(--secondary-light-color);
 }

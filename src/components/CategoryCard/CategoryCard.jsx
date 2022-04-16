@@ -20,7 +20,7 @@ export const CategoryCard = ({
         <p className="text-gray">{numberOfquestions} Questions</p>
         <Link
           to={`/rules/${_id}`}
-          className="cta primary-cta py-1 px-2 font-bold ml-auto rounded-sm transition-2"
+          className="cta primary-cta ml-auto rounded-sm transition-2"
         >
           Take quiz
         </Link>

@@ -4,14 +4,19 @@
   background-color: var(--navigation-background-color);
 }
 
+.heading {
+  padding: 0 8px;
+  font-size: 2rem;
+  text-transform: none;
+}
+
 .themeBtn span {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: var(--primary-color);
 }
 
 .themeBtn {
-  padding: 4px;
-  border: 1px solid var(--secondary-light-color);
+  padding: 6px;
 }
 
 .themeBtn:hover {
@@ -20,4 +25,11 @@
 
 .loginCta:hover {
   background: var(--secondary-hover-color);
+}
+
+@media screen and (max-width: 30em) {
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

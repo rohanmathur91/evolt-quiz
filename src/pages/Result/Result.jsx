@@ -25,16 +25,17 @@ export const Result = () => {
                 )}
 
                 {options.map(({ _id, option, isCorrect }) => (
-                  <p
+                  <button
                     key={_id}
+                    disabled
                     className={`${styles.option} ${
                       isCorrect ? styles.correct : ""
                     } ${
                       _id === selectedOptionId && !isCorrect ? styles.wrong : ""
-                    } w-100 transition-3 p-2 rounded-sm mb-2`}
+                    } w-100 transition-3 text-base font-regular p-2 rounded-sm mb-2`}
                   >
                     {option}
-                  </p>
+                  </button>
                 ))}
               </div>
             )

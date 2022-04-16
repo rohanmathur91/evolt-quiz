@@ -22,7 +22,7 @@ export const Rules = () => {
       </div>
       <Link
         to={`/quiz/${quizId}`}
-        className="mt-4 mb-2 cta py-1 px-2 font-semibold primary-cta rounded-sm"
+        className="mt-4 mb-2 cta font-semibold primary-cta rounded-sm"
       >
         Let's start
       </Link>

@@ -67,7 +67,7 @@ export const CurrentQuestion = () => {
                 selectedOptionId && _id === selectedOptionId && !isCorrect
                   ? styles.wrong
                   : ""
-              } w-100 transition-3 p-2 rounded-sm mb-2`}
+              } w-100 transition-3 p-2 text-base font-regular rounded-sm mb-2`}
             >
               {option}
             </button>
@@ -75,9 +75,10 @@ export const CurrentQuestion = () => {
       </div>
       <button
         onClick={handleNextClick}
-        className="cta primary-cta py-1 pl-2 pr-1 rounded-sm font-semibold icon-container"
+        className="cta primary-cta rounded-sm pl-3 font-semibold icon-container"
       >
-        Next<span className="material-icons-outlined ml-1">navigate_next</span>
+        Next
+        <span className="material-icons-outlined">navigate_next</span>
       </button>
     </>
   );
