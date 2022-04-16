@@ -24,7 +24,7 @@ export const CurrentQuestion = () => {
         payload: {
           quizId,
           selectedOptionId: _id,
-          score: isCorrect ? 5 : -5,
+          score: isCorrect ? 5 : 0,
         },
       });
 

@@ -15,7 +15,7 @@ export const Rules = () => {
         </p>
         <p className="mb-3 title">
           2. For each <span className={`${styles.wrong} title`}>wrong</span>{" "}
-          answer gets -5 points.
+          answer gets 0 points.
         </p>
         <p className="mb-3 title">3. Only one chance for each answer.</p>
         <p className="title">All The Best.</p>

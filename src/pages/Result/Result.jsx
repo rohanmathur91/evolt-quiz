@@ -1,16 +1,23 @@
 import React from "react";
 import { Score } from "../../components";
 import { useQuiz } from "../../contexts";
+import { getTotalScore } from "../../utils";
 import styles from "./Result.module.css";
 
 export const Result = () => {
   const { quiz } = useQuiz();
+  const totalScore = getTotalScore(quiz);
 
   return (
     <main className="main-container flex-column items-center mx-2">
       <h3 className="text-underline mt-4">Your Result 🎉</h3>
       <div className="quiz-container w-100 flex-column items-center mt-3 mb-6">
-        <Score />
+        <div className="w-100 flex-row items-center content-space-between">
+          <p className="text-lg font-bold">Questions: {quiz.length}</p>
+          <div className="text-lg font-bold">
+            Score: <span className="text-lg font-bold">{totalScore}</span>
+          </div>
+        </div>
         <h3 className="my-2">Check Answers</h3>
         {quiz.length > 0 &&
           quiz.map(
