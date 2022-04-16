@@ -1,7 +1,7 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, Rules, Category } from "./pages";
+import { Home, Rules, Category, Quiz } from "./pages";
 import { Navbar } from "./components";
-import Mockman from "mockman-js";
 import "./App.css";
 
 const App = () => {
@@ -10,8 +10,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rules" element={<Rules />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/rules/:quizId" element={<Rules />} />
+        <Route path="/quiz/:quizId" element={<Quiz />} />
       </Routes>
     </div>
   );

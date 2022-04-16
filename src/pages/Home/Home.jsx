@@ -12,7 +12,7 @@ export const Home = () => {
         <div className="flex-row flex-center">
           <Link
             to="/category"
-            className="cta primary-cta py-1 px-4 font-bold rounded-sm icon-container"
+            className="cta primary-cta py-1 px-3 font-bold rounded-sm icon-container"
           >
             Get Started
             <span className="cta-icon material-icons-outlined ml-1 transition-3">

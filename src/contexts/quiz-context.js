@@ -5,10 +5,8 @@ import { quizReducer, quizInitialstate, SET_CATEGORIES } from "../reducers";
 const QuizContext = createContext();
 
 const QuizProvider = ({ children }) => {
-  const [{ categories }, quizDispatch] = useReducer(
-    quizReducer,
-    quizInitialstate
-  );
+  const [{ quiz, score, currentQuestionIndex, categories }, quizDispatch] =
+    useReducer(quizReducer, quizInitialstate);
 
   useEffect(() => {
     (async () => {
@@ -25,7 +23,9 @@ const QuizProvider = ({ children }) => {
   }, []);
 
   return (
-    <QuizContext.Provider value={{ categories, quizDispatch }}>
+    <QuizContext.Provider
+      value={{ quiz, score, currentQuestionIndex, categories, quizDispatch }}
+    >
       {children}
     </QuizContext.Provider>
   );

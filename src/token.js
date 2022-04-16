@@ -1,2 +1,3 @@
+// will remove this after the auth implementation
 export const encodedToken =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlOTAzOTg2OS1iYTc5LTRlOTAtODAyMy0xYjIzNDA5Nzg1ODAiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.qzroqUUB2x6aTHpBzGJPS5DQEq2y04qOt80b3FaX25Y";
