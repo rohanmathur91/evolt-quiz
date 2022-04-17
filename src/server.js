@@ -7,12 +7,16 @@ import {
   getAllQuizHandler,
   getQuizByIdHandler,
 } from "./backend/controllers/QuizController";
+import {
+  addResult,
+  getResults,
+  getUserResults,
+} from "./backend/controllers/ResultController";
 import { getAllCategoriesHandler } from "./backend/controllers/CategoryController";
-import { getLeaderboard } from "./backend/controllers/leaderboard";
 
 import { users } from "./backend/db/users";
 import { quizzes } from "./backend/db/quizzes";
-import { leaderboard } from "./backend/db/leaderboard";
+import { results } from "./backend/db/results";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -23,7 +27,7 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       quiz: Model,
       user: Model,
-      leaderboard: Model,
+      result: Model,
     },
 
     // Runs on the start of the server
@@ -33,7 +37,7 @@ export function makeServer({ environment = "development" } = {}) {
 
       users.forEach((item) => server.create("user", { ...item }));
       quizzes.forEach((item) => server.create("quiz", { ...item }));
-      leaderboard.forEach((item) => server.create("leaderboard", { ...item }));
+      results.forEach((item) => server.create("result", { ...item }));
     },
 
     routes() {
@@ -45,8 +49,10 @@ export function makeServer({ environment = "development" } = {}) {
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
 
-      // leaderboard route (public)
-      this.get("/leaderboard", getLeaderboard.bind(this));
+      // results route (private)
+      this.post("/results", addResult.bind(this));
+      this.get("/results", getResults.bind(this));
+      this.get("/results/:userId", getUserResults.bind(this));
 
       // quiz routes (private)
       this.get("/quiz", getAllQuizHandler.bind(this));
