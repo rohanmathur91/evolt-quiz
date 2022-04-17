@@ -1,11 +1,40 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import { useQuiz } from "../../contexts";
+import { SET_LEADERBOARD } from "../../reducers";
 import { getTotalScore } from "../../utils";
+import { encodedToken } from "../../token";
 import styles from "./Result.module.css";
 
 export const Result = () => {
-  const { quiz } = useQuiz();
+  const { quiz, quizDispatch, selectedCategory } = useQuiz();
   const totalScore = getTotalScore(quiz);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const {
+          data: { results },
+        } = await axios.post(
+          "/api/results",
+          {
+            result: {
+              totalScore,
+              username: "Adarsh Balika",
+              category: selectedCategory,
+            },
+          },
+          {
+            headers: { authorization: encodedToken },
+          }
+        );
+
+        quizDispatch({ type: SET_LEADERBOARD, payload: results });
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [totalScore, selectedCategory, quizDispatch]);
 
   return (
     <main className="main-container flex-column items-center mx-2">

@@ -1,4 +1,5 @@
 import { Response } from "miragejs";
+import { v4 as uuid } from "uuid";
 import { requiresAuth } from "../utils/authUtils";
 
 // get all the results
@@ -47,6 +48,10 @@ export const addResult = function (schema, request) {
     );
   }
   const { result } = JSON.parse(request.requestBody);
-  schema.db.results.insert(result);
+  schema.db.results.insert({
+    _id: uuid(),
+    ...result,
+    createdAt: String(new Date()).split(" ").slice(1, 4).join(" "),
+  });
   return new Response(200, {}, { results: schema.db.results });
 };
