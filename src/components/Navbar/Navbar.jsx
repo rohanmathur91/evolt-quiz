@@ -13,7 +13,6 @@ export const Navbar = () => {
       <Link to="/" className={`${styles.heading} font-semibold`}>
         Evolt Quiz
       </Link>
-
       <div className="flex-row items-center">
         <Link
           to="/login"
@@ -21,7 +20,6 @@ export const Navbar = () => {
         >
           Login
         </Link>
-
         <button
           title="Change theme"
           onClick={toggleTheme}

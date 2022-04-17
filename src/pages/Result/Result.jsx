@@ -17,7 +17,7 @@ export const Result = () => {
             Score: <span className="text-lg font-bold">{totalScore}</span>
           </div>
         </div>
-        <h3 className="my-2">Check Answers</h3>
+        <h3 className="mt-5">Check Answers</h3>
         {quiz.length > 0 &&
           quiz.map(
             ({ _id: quizId, question, options, selectedOptionId, score }) => (
