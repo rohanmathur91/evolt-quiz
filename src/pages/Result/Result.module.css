@@ -3,10 +3,6 @@
   background-color: var(--secondary-light-color);
 }
 
-.option:hover {
-  background-color: var(--hover);
-}
-
 .option.wrong {
   background-color: var(--error-color);
 }
