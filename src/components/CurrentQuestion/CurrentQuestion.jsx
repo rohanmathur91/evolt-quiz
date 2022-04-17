@@ -54,8 +54,8 @@ export const CurrentQuestion = () => {
 
   return (
     <>
-      <div className="flex-column items-center w-100">
-        <p className="my-5 text-lg font-semibold">{question}</p>
+      <div className="flex-column w-100">
+        <p className="my-5 text-lg font-semibold text-left">{question}</p>
         {quiz.length > 0 &&
           options.map(({ _id, option, isCorrect }) => (
             <button

@@ -22,13 +22,17 @@ export const Result = () => {
         {quiz.length > 0 &&
           quiz.map(
             ({ _id: quizId, question, options, selectedOptionId, score }) => (
-              <div key={quizId} className="flex-column items-center w-100">
+              <div key={quizId} className="flex-column w-100">
                 <p className="mt-5 title">{question}</p>
 
                 {selectedOptionId ? (
-                  <p className="text-gray mt-1 mb-5 text-sm">{score} Points</p>
+                  <p className="text-gray text-center mt-1 mb-5 text-sm">
+                    {score} Points
+                  </p>
                 ) : (
-                  <p className="text-red mt-1 mb-5 text-sm">Not attempted</p>
+                  <p className="text-red text-center mt-1 mb-5 text-sm">
+                    Not attempted
+                  </p>
                 )}
 
                 {options.map(({ _id, option, isCorrect }) => (
