@@ -1,5 +1,4 @@
 import React from "react";
-import { Score } from "../../components";
 import { useQuiz } from "../../contexts";
 import { getTotalScore } from "../../utils";
 import styles from "./Result.module.css";
