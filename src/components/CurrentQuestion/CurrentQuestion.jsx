@@ -75,7 +75,7 @@ export const CurrentQuestion = () => {
       </div>
       <button
         onClick={handleNextClick}
-        className="cta primary-cta rounded-sm pl-3 font-semibold icon-container"
+        className="cta primary-cta rounded-sm pl-3 mb-4 font-semibold icon-container"
       >
         {currentQuestionIndex === quiz.length - 1 ? "Show result" : "Next"}
         <span className="material-icons-outlined">navigate_next</span>

@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <nav className={`${styles.navbar} sticky top-0 z-1 w-100 py-2 px-5`}>
       <div className="max-container flex-row content-space-between items-center">
-        <Link to="/" className={`${styles.heading} font-semibold`}>
+        <Link to="/" className={`${styles.logo} font-semibold`}>
           Evolt Quiz
         </Link>
 

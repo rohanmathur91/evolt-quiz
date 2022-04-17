@@ -8,7 +8,7 @@ import { encodedToken } from "../../token";
 
 export const Quiz = () => {
   const [showRules, setShowRules] = useState(true);
-  const [isloading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { quizId } = useParams();
   const { selectedCategory, quizDispatch } = useQuiz();
 
@@ -37,7 +37,7 @@ export const Quiz = () => {
 
   return (
     <main className="main-container flex-column items-center mx-2">
-      {isloading ? (
+      {isLoading ? (
         <Loader />
       ) : showRules ? (
         <Rules category={selectedCategory} setShowRules={setShowRules} />

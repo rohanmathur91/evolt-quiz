@@ -6,7 +6,15 @@ const QuizContext = createContext();
 
 const QuizProvider = ({ children }) => {
   const [
-    { quiz, score, selectedCategory, currentQuestionIndex, categories },
+    {
+      quiz,
+      score,
+      userResults,
+      leaderboard,
+      selectedCategory,
+      currentQuestionIndex,
+      categories,
+    },
     quizDispatch,
   ] = useReducer(quizReducer, quizInitialstate);
 
@@ -29,9 +37,11 @@ const QuizProvider = ({ children }) => {
       value={{
         quiz,
         score,
+        categories,
+        userResults,
+        leaderboard,
         selectedCategory,
         currentQuestionIndex,
-        categories,
         quizDispatch,
       }}
     >

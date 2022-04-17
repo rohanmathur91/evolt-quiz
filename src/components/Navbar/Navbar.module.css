@@ -4,10 +4,11 @@
   background-color: var(--navigation-background-color);
 }
 
-.heading {
+.logo {
   padding: 0 8px;
   font-size: 2rem;
   text-transform: none;
+  color: var(--primary-color);
 }
 
 .navIcon {
