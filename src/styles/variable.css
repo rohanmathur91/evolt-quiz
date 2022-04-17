@@ -15,7 +15,7 @@
   --secondary-hover-color: #e5e7eb;
   --navigation-background-color: #fafafa9c;
   --shadow: 0px 2px 8px 0px #63636333;
-  --tooltip-background-color: #525252b0;
+  --tooltip-background-color: #525252cc;
 }
 
 .dark {
@@ -29,5 +29,5 @@
   --secondary-hover-color: #212325;
   --navigation-background-color: #1315179c;
   --shadow: 0px 2px 8px 0px #00000066;
-  --tooltip-background-color: #52525269;
+  --tooltip-background-color: #525252c9;
 }

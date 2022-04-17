@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuiz } from "../../contexts";
 import { INITIALIZE_QUIZ } from "../../reducers";
-import { Score, Rules, CurrentQuestion, Loader } from "../../components";
+import { Rules, CurrentQuestion, Loader } from "../../components";
 import { encodedToken } from "../../token";
 
 export const Quiz = () => {
   const [showRules, setShowRules] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const { quizId } = useParams();
-  const { selectedCategory, quizDispatch } = useQuiz();
+  const { quizDispatch, selectedCategory } = useQuiz();
 
   useEffect(() => {
     (async () => {
@@ -42,13 +42,7 @@ export const Quiz = () => {
       ) : showRules ? (
         <Rules category={selectedCategory} setShowRules={setShowRules} />
       ) : (
-        <>
-          <h3 className="text-underline mt-4">{selectedCategory} Quiz</h3>
-          <div className="quiz-container w-100 flex-column items-center mt-3">
-            <Score />
-            <CurrentQuestion />
-          </div>
-        </>
+        <CurrentQuestion />
       )}
     </main>
   );
