@@ -10,20 +10,16 @@
   text-transform: none;
 }
 
-.themeBtn span {
-  font-size: 2.6rem;
+.navIcon {
+  margin-left: 4px;
+}
+
+.navIcon span {
   color: var(--primary-color);
 }
 
-.themeBtn {
-  padding: 6px;
-}
-
-.themeBtn:hover {
-  background: var(--secondary-hover-color);
-}
-
-.loginCta:hover {
+.active,
+.navIcon:hover {
   background: var(--secondary-hover-color);
 }
 
