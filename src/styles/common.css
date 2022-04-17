@@ -1,3 +1,4 @@
+/* links and buttons */
 .cta {
   color: var(--secondary-hover-color);
 }
@@ -27,6 +28,7 @@
   background-color: var(--success-color);
 }
 
+/* container */
 .quiz-container {
   max-width: 50rem;
 }
@@ -45,4 +47,32 @@
 .max-container {
   margin: auto;
   max-width: 140rem;
+}
+
+/* tooltip */
+.tooltip[data-tooltip] {
+  position: relative;
+}
+
+.tooltip[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 6rem;
+  z-index: 1;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 4px 6px;
+  max-width: 15rem;
+  width: max-content;
+  text-transform: none;
+  letter-spacing: 0.8px;
+  border-radius: 4px;
+  color: var(--tooltip-color);
+  background-color: var(--tooltip-background-color);
+}
+
+@media screen and (max-width: 30em) {
+  .tooltip[data-tooltip]:hover::after {
+    right: 0;
+  }
 }

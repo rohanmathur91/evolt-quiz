@@ -1,4 +1,6 @@
 :root {
+  --yellow: #facc15;
+  --tooltip-color: #ffffff;
   --navigation-shadow: rgba(0, 0, 0, 0.2);
 }
 
@@ -12,7 +14,8 @@
   --secondary-light-color: #d1d5db;
   --secondary-hover-color: #e5e7eb;
   --navigation-background-color: #fafafa9c;
-  --shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
+  --shadow: 0px 2px 8px 0px #63636333;
+  --tooltip-background-color: #525252b0;
 }
 
 .dark {
@@ -25,5 +28,6 @@
   --secondary-light-color: #242628;
   --secondary-hover-color: #212325;
   --navigation-background-color: #1315179c;
-  --shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  --shadow: 0px 2px 8px 0px #00000066;
+  --tooltip-background-color: #52525269;
 }

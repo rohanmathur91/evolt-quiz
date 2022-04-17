@@ -1,6 +1,6 @@
 .trophyIcon {
   font-size: 5rem;
-  color: #facc15;
+  color: var(--yellow);
 }
 
 .leaderboard {
