@@ -8,13 +8,20 @@ import {
 export const quizInitialstate = {
   quiz: [],
   categories: [],
+  selectedCategory: "",
   currentQuestionIndex: 0,
 };
 
 export const quizReducer = (quizState, { type, payload }) => {
   switch (type) {
     case INITIALIZE_QUIZ:
-      return { ...quizState, quiz: payload, currentQuestionIndex: 0, score: 0 };
+      return {
+        ...quizState,
+        score: 0,
+        currentQuestionIndex: 0,
+        quiz: payload.quiz,
+        selectedCategory: payload.selectedCategory,
+      };
 
     case SET_CATEGORIES:
       return { ...quizState, categories: payload };

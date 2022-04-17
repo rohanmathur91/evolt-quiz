@@ -57,7 +57,7 @@ export const CurrentQuestion = () => {
       <div className="flex-column w-100">
         <p className="my-5 text-lg font-semibold text-left">{question}</p>
         {quiz.length > 0 &&
-          options.map(({ _id, option, isCorrect }) => (
+          options.map(({ _id, option, isCorrect }, index) => (
             <button
               key={_id}
               onClick={() => handleOptionClick({ _id, isCorrect })}
@@ -77,7 +77,7 @@ export const CurrentQuestion = () => {
         onClick={handleNextClick}
         className="cta primary-cta rounded-sm pl-3 font-semibold icon-container"
       >
-        Next
+        {currentQuestionIndex === quiz.length - 1 ? "Show result" : "Next"}
         <span className="material-icons-outlined">navigate_next</span>
       </button>
     </>

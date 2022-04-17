@@ -19,7 +19,7 @@ export const CategoryCard = ({
       <div className="category-footer flex-row items-center">
         <p className="text-gray">{numberOfquestions} Questions</p>
         <Link
-          to={`/rules/${_id}`}
+          to={`/quiz/${_id}`}
           className="cta primary-cta ml-auto rounded-sm transition-2"
         >
           Take quiz

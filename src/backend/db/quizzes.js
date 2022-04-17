@@ -11,7 +11,7 @@ export const quizzes = [
     quiz: [
       {
         _id: uuid(),
-        question: "Sheldon is which type of scientist?",
+        question: "Sheldon is which type of scientist in big bang theory?",
         options: [
           { _id: uuid(), option: "Experimental physicist", isCorrect: true },
           { _id: uuid(), option: "Aerospace engineer", isCorrect: false },
@@ -31,7 +31,7 @@ export const quizzes = [
       },
       {
         _id: uuid(),
-        question: "What state is Penny from? ",
+        question: "From which state penny belongs to?",
         options: [
           {
             _id: uuid(),
@@ -55,7 +55,8 @@ export const quizzes = [
     quiz: [
       {
         _id: uuid(),
-        question: "Which is the richest source of vitamin C?",
+        question:
+          "Which is the richest source of vitamin C in the given options?",
         options: [
           { _id: uuid(), option: "Milk", isCorrect: false },
           { _id: uuid(), option: "Carrot", isCorrect: false },
@@ -65,7 +66,7 @@ export const quizzes = [
       },
       {
         _id: uuid(),
-        question: "Which food contains Vitamin D?",
+        question: "Which food contains source of Vitamin D?",
         options: [
           { _id: uuid(), option: "Fatty fish", isCorrect: false },
           { _id: uuid(), option: "Mushrooms", isCorrect: false },
