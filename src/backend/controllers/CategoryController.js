@@ -13,13 +13,13 @@ import { Response } from "miragejs";
 export const getAllCategoriesHandler = function () {
   try {
     const categories = this.db.quizzes.map(
-      ({ _id, alt, image, numberOfquestions, category, title }) => ({
+      ({ _id, alt, image, quiz, category, title }) => ({
         _id,
         alt,
         image,
         title,
         category,
-        numberOfquestions,
+        numberOfquestions: quiz.length,
       })
     );
 

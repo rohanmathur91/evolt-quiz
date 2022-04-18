@@ -15,14 +15,14 @@ export const Rules = () => {
         </p>
         <p className="mb-3 title">
           2. For each <span className={`${styles.wrong} title`}>wrong</span>{" "}
-          answer gets -5 points.
+          answer gets 0 points.
         </p>
         <p className="mb-3 title">3. Only one chance for each answer.</p>
         <p className="title">All The Best.</p>
       </div>
       <Link
         to={`/quiz/${quizId}`}
-        className="mt-4 mb-2 cta py-1 px-2 font-semibold primary-cta rounded-sm"
+        className="mt-4 mb-2 cta font-semibold primary-cta rounded-sm"
       >
         Let's start
       </Link>

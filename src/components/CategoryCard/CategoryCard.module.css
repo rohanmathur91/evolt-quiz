@@ -1,7 +1,8 @@
 .card {
   width: 32rem;
   align-self: flex-start;
-  background-color: var(--secondary-light-color);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--secondary-light-color);
 }
 
 .image {
