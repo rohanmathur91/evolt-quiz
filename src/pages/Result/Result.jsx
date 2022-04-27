@@ -49,9 +49,14 @@ export const Result = () => {
         <h3 className="mt-5">Check Answers</h3>
         {quiz.length > 0 &&
           quiz.map(
-            ({ _id: quizId, question, options, selectedOptionId, score }) => (
+            (
+              { _id: quizId, question, options, selectedOptionId, score },
+              index
+            ) => (
               <div key={quizId} className="flex-column w-100">
-                <p className="mt-5 title">{question}</p>
+                <p className="mt-5 title">
+                  {index + 1}. {question}
+                </p>
 
                 {selectedOptionId ? (
                   <p className="text-gray text-center mt-1 mb-5 text-sm">

@@ -1,6 +1,6 @@
 :root {
+  --white: #ffffff;
   --yellow: #facc15;
-  --tooltip-color: #ffffff;
   --navigation-shadow: rgba(0, 0, 0, 0.2);
 }
 
@@ -21,7 +21,7 @@
 .dark {
   --gray: #b1b1b1;
   --hover: #45494d;
-  --error-color: #ce3838;
+  --error-color: #ef4444;
   --success-color: #189545;
   --primary-color: #fafafa;
   --secondary-color: #131517;

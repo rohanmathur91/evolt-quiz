@@ -1,3 +1,16 @@
+.header {
+  max-width: 50rem;
+}
+
+.timer {
+  width: 6rem;
+}
+
+.quitLink {
+  color: var(--white);
+  background-color: var(--error-color);
+}
+
 .option {
   text-transform: none;
   color: var(--primary-color);

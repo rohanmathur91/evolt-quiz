@@ -2,7 +2,10 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { quizReducer, quizInitialstate, SET_CATEGORIES } from "../reducers";
 
-const QuizContext = createContext();
+const QuizContext = createContext({
+  ...quizInitialstate,
+  quizDispatch: () => {},
+});
 
 const QuizProvider = ({ children }) => {
   const [

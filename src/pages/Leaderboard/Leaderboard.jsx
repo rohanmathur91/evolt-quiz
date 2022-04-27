@@ -32,7 +32,7 @@ export const Leaderboard = () => {
 
   return (
     <main className="main-container pb-5">
-      <h3 className="text-underline my-4 icon-container">
+      <h3 className="text-underline mt-7 mb-4 icon-container">
         Leaderboard
         <span className={`${styles.trophyIcon} material-icons-round ml-1`}>
           emoji_events
