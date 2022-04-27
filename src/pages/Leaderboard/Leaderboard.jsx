@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useQuiz } from "../../contexts";
 import { SET_LEADERBOARD } from "../../reducers";
 import { getSortedLeaderboard } from "../../utils";
@@ -32,51 +33,60 @@ export const Leaderboard = () => {
 
   return (
     <main className="main-container pb-5">
-      <h3 className="text-underline mt-7 mb-4 icon-container">
-        Leaderboard
-        <span className={`${styles.trophyIcon} material-icons-round ml-1`}>
-          emoji_events
-        </span>
-      </h3>
-      {isLoading ? (
-        <Loader />
-      ) : leaderboard.length ? (
-        <div className={`${styles.leaderboard}`}>
-          {sortedLeaderboard.map(
-            ({ _id, category, createdAt, totalScore, username }) => (
-              <div
-                key={_id}
-                className={`${styles.result} flex-row items-center content-space-between p-2 mx-1 mb-3 rounded-sm`}
-              >
-                <div
-                  className={`${styles.avatar} avatar-sm white flex-row flex-center rounded-full mr-2`}
-                >
-                  {username.slice(0, 2)}
-                </div>
-                <p className={`${styles.name}`}>{username}</p>
-                <div className={`${styles.category} flex-column flex-center`}>
-                  <span className="text-xs text-gray mb-1">Category</span>
-                  <p>{category}</p>
-                </div>
+      <div className={`${styles.leaderboard} pt-4`}>
+        <Link
+          to="/category"
+          className={`${styles.goBackLink} cta flex-row flex-center outlined-btn rounded-sm mt-2`}
+        >
+          <span class="material-icons-outlined mr-1">west</span> Go back
+        </Link>
 
-                <div className={`${styles.score} flex-column flex-center`}>
-                  <span className="text-xs text-gray mb-1">Score</span>
-                  <p>{totalScore < 10 ? "0" + totalScore : totalScore}</p>
-                </div>
-
+        <h3 className="text-underline my-4 icon-container">
+          Leaderboard
+          <span className={`${styles.trophyIcon} material-icons-round ml-1`}>
+            emoji_events
+          </span>
+        </h3>
+        {isLoading ? (
+          <Loader />
+        ) : leaderboard.length ? (
+          <div>
+            {sortedLeaderboard.map(
+              ({ _id, category, createdAt, totalScore, username }) => (
                 <div
-                  className={`${styles.date} flex-column flex-center ml-auto`}
+                  key={_id}
+                  className={`${styles.result} flex-row items-center content-space-between p-2 mx-1 mb-3 rounded-sm`}
                 >
-                  <span className="text-xs text-gray mb-1">Date</span>
-                  <span className="text-sm">{createdAt}</span>
+                  <div
+                    className={`${styles.avatar} avatar-sm white flex-row flex-center rounded-full mr-2`}
+                  >
+                    {username.slice(0, 2)}
+                  </div>
+                  <p className={`${styles.name}`}>{username}</p>
+                  <div className={`${styles.category} flex-column flex-center`}>
+                    <span className="text-xs text-gray mb-1">Category</span>
+                    <p>{category}</p>
+                  </div>
+
+                  <div className={`${styles.score} flex-column flex-center`}>
+                    <span className="text-xs text-gray mb-1">Score</span>
+                    <p>{totalScore < 10 ? "0" + totalScore : totalScore}</p>
+                  </div>
+
+                  <div
+                    className={`${styles.date} flex-column flex-center ml-auto`}
+                  >
+                    <span className="text-xs text-gray mb-1">Date</span>
+                    <span className="text-sm">{createdAt}</span>
+                  </div>
                 </div>
-              </div>
-            )
-          )}
-        </div>
-      ) : (
-        <p className="text-center mt-4">No results to show.</p>
-      )}
+              )
+            )}
+          </div>
+        ) : (
+          <p className="text-center mt-4">No results to show.</p>
+        )}
+      </div>
     </main>
   );
 };

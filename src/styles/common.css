@@ -28,6 +28,16 @@
   background-color: var(--success-color);
 }
 
+.outlined-btn {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.outlined-btn:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
 /* container */
 .quiz-container {
   max-width: 50rem;
