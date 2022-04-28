@@ -16,7 +16,6 @@ export const Navbar = () => {
         <div className="flex-row items-center">
           <NavLink
             to="/login"
-            data-tooltip="Login"
             className={({ isActive }) =>
               `${styles.navIcon} ${
                 isActive ? styles.active : ""
@@ -24,10 +23,10 @@ export const Navbar = () => {
             }
           >
             <span className="material-icons-round">person_outline</span>
+            <span className="tooltip-text">Login</span>
           </NavLink>
           <NavLink
             to="/leaderboard"
-            data-tooltip="Leaderboard"
             className={({ isActive }) =>
               `${styles.navIcon} ${
                 isActive ? styles.active : ""
@@ -35,15 +34,18 @@ export const Navbar = () => {
             }
           >
             <span className="material-icons-round">leaderboard</span>
+            <span className="tooltip-text">Leaderboard</span>
           </NavLink>
 
           <button
             onClick={toggleTheme}
-            data-tooltip={`Change to ${theme === "dark" ? "light" : "dark"}`}
             className={`${styles.navIcon} tooltip rounded-sm icon-container transition-2`}
           >
             <span className="material-icons-outlined">
               {theme === "dark" ? "light_mode" : "dark_mode"}
+            </span>
+            <span className="tooltip-text">
+              Change to {theme === "dark" ? "light" : "dark"}
             </span>
           </button>
         </div>

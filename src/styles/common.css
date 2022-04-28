@@ -60,14 +60,14 @@
 }
 
 /* tooltip */
-.tooltip[data-tooltip] {
+.tooltip {
   position: relative;
 }
 
-.tooltip[data-tooltip]:hover::after {
-  content: attr(data-tooltip);
+.tooltip .tooltip-text {
   position: absolute;
-  top: 6rem;
+  opacity: 0;
+  top: 140%;
   z-index: 1;
   font-weight: 400;
   font-size: 1.2rem;
@@ -78,11 +78,16 @@
   letter-spacing: 0.8px;
   border-radius: 4px;
   color: var(--white);
+  transition: opacity 0.2s ease-in-out;
   background-color: var(--tooltip-background-color);
 }
 
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+}
+
 @media screen and (max-width: 30em) {
-  .tooltip[data-tooltip]:hover::after {
+  .tooltip .tooltip-text {
     right: 0;
   }
 }
