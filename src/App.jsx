@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Home, Category, Quiz, Result, Leaderboard } from "./pages";
 import { Navbar } from "./components";
 import { useTheme } from "./contexts";
+import Mockman from "mockman-js";
 import "./App.css";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/quiz/:quizId" element={<Quiz />} />
         <Route path="/result" element={<Result />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>
   );
