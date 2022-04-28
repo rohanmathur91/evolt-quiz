@@ -6,15 +6,15 @@ import "./Toast.css";
 export const Toast = () => {
   return (
     <ToastContainer
-      position="top-right"
-      autoClose={2000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
       draggable
+      rtl={false}
+      closeOnClick
       pauseOnHover
+      autoClose={2000}
+      pauseOnFocusLoss
+      newestOnTop={false}
+      position="top-right"
+      hideProgressBar={false}
     />
   );
 };

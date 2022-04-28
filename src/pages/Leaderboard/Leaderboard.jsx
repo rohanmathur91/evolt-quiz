@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useQuiz } from "../../contexts";
-import { SET_LEADERBOARD } from "../../reducers";
-import { useScrollToTop, useDocumentTitle } from "../../hooks";
+import { useToast, useScrollToTop, useDocumentTitle } from "../../hooks";
+import { fetchLeaderboard } from "../../services";
 import { getSortedLeaderboard } from "../../utils";
 import { Loader } from "../../components";
-import { encodedToken } from "../../token";
 import styles from "./Leaderboard.module.css";
 
 export const Leaderboard = () => {
+  const { showToast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const { leaderboard, quizDispatch } = useQuiz();
   const sortedLeaderboard = getSortedLeaderboard(leaderboard);
@@ -18,22 +17,8 @@ export const Leaderboard = () => {
   useDocumentTitle("Leaderboard");
 
   useEffect(() => {
-    (async () => {
-      try {
-        setIsLoading(true);
-        const {
-          data: { results },
-        } = await axios.get("/api/results", {
-          headers: { authorization: encodedToken },
-        });
-
-        quizDispatch({ type: SET_LEADERBOARD, payload: results });
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [quizDispatch]);
+    fetchLeaderboard({ showToast, quizDispatch, setIsLoading });
+  }, [showToast, quizDispatch]);
 
   return (
     <main className="main-container pb-5">
@@ -42,7 +27,7 @@ export const Leaderboard = () => {
           to="/category"
           className={`${styles.goBackLink} cta flex-row flex-center outlined-btn rounded-sm ml-2`}
         >
-          <span class="material-icons-outlined mr-1">west</span> Go back
+          <span className="material-icons-outlined mr-1">west</span> Go back
         </Link>
 
         <h3 className="text-underline my-4 icon-container">

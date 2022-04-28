@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home, Category, Quiz, Result, Leaderboard } from "./pages";
-import { Navbar } from "./components";
+import { Navbar, Toast } from "./components";
 import { useTheme } from "./contexts";
 import Mockman from "mockman-js";
 import "./App.css";
@@ -12,6 +12,7 @@ const App = () => {
   return (
     <div className={`app ${theme}`}>
       <Navbar />
+      <Toast />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />

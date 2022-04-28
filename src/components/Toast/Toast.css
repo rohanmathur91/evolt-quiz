@@ -1,4 +1,9 @@
 /* overriding toastify styles */
+.Toastify {
+  --toastify-color-success: var(--success-color);
+  --toastify-text-color-light: var(--text-color);
+}
+
 .Toastify__toast-container--top-right {
   top: 6em;
   right: 1em;

@@ -1,6 +1,7 @@
-import axios from "axios";
-import { createContext, useContext, useEffect, useReducer } from "react";
-import { quizReducer, quizInitialstate, SET_CATEGORIES } from "../reducers";
+import { useEffect, useContext, useReducer, createContext } from "react";
+import { useToast } from "../hooks";
+import { quizReducer, quizInitialstate } from "../reducers";
+import { fetchCategories } from "../services";
 
 const QuizContext = createContext({
   ...quizInitialstate,
@@ -20,20 +21,11 @@ const QuizProvider = ({ children }) => {
     },
     quizDispatch,
   ] = useReducer(quizReducer, quizInitialstate);
+  const { showToast } = useToast();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const {
-          data: { categories },
-        } = await axios.get("/api/categories");
-
-        quizDispatch({ type: SET_CATEGORIES, payload: categories });
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+    fetchCategories({ showToast, quizDispatch });
+  }, [showToast]);
 
   return (
     <QuizContext.Provider

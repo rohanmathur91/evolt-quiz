@@ -1,13 +1,12 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useQuiz } from "../../contexts";
-import { SET_LEADERBOARD } from "../../reducers";
-import { useScrollToTop, useDocumentTitle } from "../../hooks";
+import { useToast, useScrollToTop, useDocumentTitle } from "../../hooks";
+import { saveResultService } from "../../services";
 import { getTotalScore } from "../../utils";
-import { encodedToken } from "../../token";
 import styles from "./Result.module.css";
 
 export const Result = () => {
+  const { showToast } = useToast();
   const { quiz, quizDispatch, selectedCategory } = useQuiz();
   const totalScore = getTotalScore(quiz);
 
@@ -15,30 +14,13 @@ export const Result = () => {
   useDocumentTitle("Result");
 
   useEffect(() => {
-    (async () => {
-      try {
-        const {
-          data: { results },
-        } = await axios.post(
-          "/api/results",
-          {
-            result: {
-              totalScore,
-              username: "Adarsh Balika",
-              category: selectedCategory,
-            },
-          },
-          {
-            headers: { authorization: encodedToken },
-          }
-        );
-
-        quizDispatch({ type: SET_LEADERBOARD, payload: results });
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [totalScore, selectedCategory, quizDispatch]);
+    saveResultService({
+      showToast,
+      totalScore,
+      quizDispatch,
+      selectedCategory,
+    });
+  }, [showToast, totalScore, quizDispatch, selectedCategory]);
 
   return (
     <main className="main-container flex-column items-center mx-2">
