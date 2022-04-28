@@ -1,2 +1,1 @@
-export { homeBanner } from "./homeBanner";
-
+export * from "./homeBanner";

@@ -1,1 +1,2 @@
-export * from "./quiz-services";
+export * from "./authServices";
+export * from "./quizServices";

@@ -1,6 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, Category, Quiz, Result, Leaderboard } from "./pages";
+import {
+  Login,
+  Signup,
+  Home,
+  Category,
+  Quiz,
+  Result,
+  Leaderboard,
+} from "./pages";
 import { Navbar, Toast } from "./components";
 import { useTheme } from "./contexts";
 import Mockman from "mockman-js";
@@ -15,6 +23,8 @@ const App = () => {
       <Toast />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/category" element={<Category />} />
         <Route path="/quiz/:quizId" element={<Quiz />} />
         <Route path="/result" element={<Result />} />

@@ -4,3 +4,4 @@ export { Loader } from "./Loader/Loader";
 export { Navbar } from "./Navbar/Navbar";
 export { CategoryCard } from "./CategoryCard/CategoryCard";
 export { CurrentQuestion } from "./CurrentQuestion/CurrentQuestion";
+export { Input } from "./Input/Input";
