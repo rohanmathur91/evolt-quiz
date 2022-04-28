@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuiz } from "../../contexts";
 import { INITIALIZE_QUIZ } from "../../reducers";
+import { useScrollToTop, useDocumentTitle } from "../../hooks";
 import { Rules, CurrentQuestion, Loader } from "../../components";
 import { encodedToken } from "../../token";
 
@@ -11,6 +12,9 @@ export const Quiz = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { quizId } = useParams();
   const { quizDispatch, selectedCategory } = useQuiz();
+
+  useScrollToTop();
+  useDocumentTitle(selectedCategory || "Quiz");
 
   useEffect(() => {
     (async () => {

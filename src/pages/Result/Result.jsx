@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useQuiz } from "../../contexts";
 import { SET_LEADERBOARD } from "../../reducers";
+import { useScrollToTop, useDocumentTitle } from "../../hooks";
 import { getTotalScore } from "../../utils";
 import { encodedToken } from "../../token";
 import styles from "./Result.module.css";
@@ -9,6 +10,9 @@ import styles from "./Result.module.css";
 export const Result = () => {
   const { quiz, quizDispatch, selectedCategory } = useQuiz();
   const totalScore = getTotalScore(quiz);
+
+  useScrollToTop();
+  useDocumentTitle("Result");
 
   useEffect(() => {
     (async () => {

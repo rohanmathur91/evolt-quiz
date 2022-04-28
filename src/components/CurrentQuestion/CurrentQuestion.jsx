@@ -107,7 +107,8 @@ export const CurrentQuestion = () => {
             to="/category"
             className={`${styles.quitLink} rounded-sm icon-container`}
           >
-            <span class="material-icons-outlined mr-1">highlight_off</span> Quit
+            <span className="material-icons-outlined mr-1">highlight_off</span>{" "}
+            Quit
           </Link>
 
           <button

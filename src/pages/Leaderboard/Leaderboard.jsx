@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useQuiz } from "../../contexts";
 import { SET_LEADERBOARD } from "../../reducers";
+import { useScrollToTop, useDocumentTitle } from "../../hooks";
 import { getSortedLeaderboard } from "../../utils";
 import { Loader } from "../../components";
 import { encodedToken } from "../../token";
@@ -12,6 +13,9 @@ export const Leaderboard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { leaderboard, quizDispatch } = useQuiz();
   const sortedLeaderboard = getSortedLeaderboard(leaderboard);
+
+  useScrollToTop();
+  useDocumentTitle("Leaderboard");
 
   useEffect(() => {
     (async () => {
@@ -36,7 +40,7 @@ export const Leaderboard = () => {
       <div className={`${styles.leaderboard} pt-4`}>
         <Link
           to="/category"
-          className={`${styles.goBackLink} cta flex-row flex-center outlined-btn rounded-sm mt-2`}
+          className={`${styles.goBackLink} cta flex-row flex-center outlined-btn rounded-sm ml-2`}
         >
           <span class="material-icons-outlined mr-1">west</span> Go back
         </Link>

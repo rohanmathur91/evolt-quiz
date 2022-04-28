@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useScrollToTop, useDocumentTitle } from "../../hooks";
 import { homeBanner } from "../../staticData";
 
 export const Home = () => {
+  useScrollToTop();
+  useDocumentTitle("Home");
+
   return (
     <main className="max-container main-container flex-row items-center content-space-around wrap p-2">
       <img className="w-40 h-30 mt-3 mx-3" src={homeBanner} alt="quiz" />
