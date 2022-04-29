@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts";
 import {
   useToast,
   useAuthForm,
@@ -23,7 +24,9 @@ export const Login = () => {
     email: "",
     password: "",
   });
+  const { setUser } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { showToast } = useToast();
 
   useScrollToTop();
@@ -33,7 +36,9 @@ export const Login = () => {
     e.preventDefault();
 
     loginService({
+      setUser,
       setError,
+      location,
       navigate,
       showToast,
       credentials,

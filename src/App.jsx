@@ -9,7 +9,7 @@ import {
   Result,
   Leaderboard,
 } from "./pages";
-import { Navbar, Toast } from "./components";
+import { Navbar, PrivateRoute, Toast } from "./components";
 import { useTheme } from "./contexts";
 import Mockman from "mockman-js";
 import "./App.css";
@@ -26,9 +26,11 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/quiz/:quizId" element={<Quiz />} />
-        <Route path="/result" element={<Result />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/quiz/:quizId" element={<Quiz />} />
+          <Route path="/result" element={<Result />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+        </Route>
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>

@@ -2,7 +2,9 @@ import axios from "axios";
 import { SET_LOADING } from "../../reducers";
 
 export const loginService = async ({
+  setUser,
   setError,
+  location,
   navigate,
   showToast,
   credentials,
@@ -15,11 +17,11 @@ export const loginService = async ({
       data: { foundUser, encodedToken },
     } = await axios.post("/api/auth/login", credentials);
 
-    console.log(foundUser);
+    setUser(foundUser);
     localStorage.setItem("evoltQuizToken", encodedToken);
     showToast("success", "You logged in successfully");
     authFormDispatch({ type: SET_LOADING, payload: false });
-    navigate("/");
+    navigate(location.state?.from?.pathname ?? "/", { replace: true });
   } catch (error) {
     setError("Email or password is incorrect");
     authFormDispatch({ type: SET_LOADING, payload: false });

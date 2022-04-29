@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useTheme } from "../../contexts";
+import { useAuth, useTheme } from "../../contexts";
 import styles from "./Navbar.module.css";
 
 export const Navbar = () => {
+  const { user } = useAuth();
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -15,7 +16,7 @@ export const Navbar = () => {
 
         <div className="flex-row items-center">
           <NavLink
-            to="/login"
+            to={user ? "/profile" : "/login"}
             className={({ isActive }) =>
               `${styles.navIcon} ${
                 isActive ? styles.active : ""
@@ -23,7 +24,7 @@ export const Navbar = () => {
             }
           >
             <span className="material-icons-round">person_outline</span>
-            <span className="tooltip-text">Login</span>
+            <span className="tooltip-text">{user ? "Profile" : "Login"}</span>
           </NavLink>
           <NavLink
             to="/leaderboard"
