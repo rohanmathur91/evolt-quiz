@@ -1,3 +1,3 @@
 export { getTotalScore } from "./getTotalScore";
-export { getSortedLeaderboard } from "./getSortedLeaderboard";
+export { getSortedResults } from "./getSortedResults";
 export { validateSignupForm } from "./validateSignupForm";

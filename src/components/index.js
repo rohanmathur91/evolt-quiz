@@ -6,3 +6,4 @@ export { Navbar } from "./Navbar/Navbar";
 export { CategoryCard } from "./CategoryCard/CategoryCard";
 export { CurrentQuestion } from "./CurrentQuestion/CurrentQuestion";
 export { PrivateRoute } from "./PrivateRoute/PrivateRoute";
+export { ResultCard } from "./ResultCard/ResultCard";

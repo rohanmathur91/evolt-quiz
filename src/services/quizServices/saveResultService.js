@@ -3,6 +3,7 @@ import { SET_LEADERBOARD } from "../../reducers";
 import { encodedToken } from "../../token";
 
 export const saveResultService = async ({
+  user,
   showToast,
   totalScore,
   selectedCategory,
@@ -16,7 +17,8 @@ export const saveResultService = async ({
       {
         result: {
           totalScore,
-          username: "Adarsh Balika",
+          userId: user._id,
+          username: user.fullName,
           category: selectedCategory,
         },
       },

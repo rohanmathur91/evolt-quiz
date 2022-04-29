@@ -1,0 +1,21 @@
+.profileIcon {
+  border: 1px solid var(--primary-color);
+}
+
+.profileIcon span {
+  font-size: 4rem;
+}
+
+.results {
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+.categoryLink {
+  padding: 0;
+  text-transform: none;
+}
+
+.categoryLink:hover {
+  text-decoration: underline;
+}

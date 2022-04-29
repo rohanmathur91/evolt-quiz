@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { useQuiz } from "../../contexts";
+import { useAuth, useQuiz } from "../../contexts";
 import { useToast, useScrollToTop, useDocumentTitle } from "../../hooks";
 import { saveResultService } from "../../services";
 import { getTotalScore } from "../../utils";
 import styles from "./Result.module.css";
 
 export const Result = () => {
+  const { user } = useAuth();
   const { showToast } = useToast();
   const { quiz, quizDispatch, selectedCategory } = useQuiz();
   const totalScore = getTotalScore(quiz);
@@ -15,12 +16,13 @@ export const Result = () => {
 
   useEffect(() => {
     saveResultService({
+      user,
       showToast,
       totalScore,
       quizDispatch,
       selectedCategory,
     });
-  }, [showToast, totalScore, quizDispatch, selectedCategory]);
+  }, [user, showToast, totalScore, quizDispatch, selectedCategory]);
 
   return (
     <main className="main-container flex-column items-center mx-2">

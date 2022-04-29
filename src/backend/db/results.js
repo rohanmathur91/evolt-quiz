@@ -20,14 +20,6 @@ export const results = [
   {
     _id: uuid(),
     userId: "adarsh-balika",
-    totalScore: 20,
-    category: "shows",
-    username: "Adarsh Balika",
-    createdAt: "Apr 17 2022",
-  },
-  {
-    _id: uuid(),
-    userId: "adarsh-balika",
     totalScore: 5,
     category: "Nutrition",
     username: "Adarsh Balika",

@@ -7,6 +7,7 @@ import {
   Category,
   Quiz,
   Result,
+  Profile,
   Leaderboard,
 } from "./pages";
 import { Navbar, PrivateRoute, Toast } from "./components";
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/category" element={<Category />} />
         <Route path="/" element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
           <Route path="/quiz/:quizId" element={<Quiz />} />
           <Route path="/result" element={<Result />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
