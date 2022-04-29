@@ -2,11 +2,24 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { quizReducer, quizInitialstate, SET_CATEGORIES } from "../reducers";
 
-const QuizContext = createContext();
+const QuizContext = createContext({
+  ...quizInitialstate,
+  quizDispatch: () => {},
+});
 
 const QuizProvider = ({ children }) => {
-  const [{ quiz, score, currentQuestionIndex, categories }, quizDispatch] =
-    useReducer(quizReducer, quizInitialstate);
+  const [
+    {
+      quiz,
+      score,
+      userResults,
+      leaderboard,
+      selectedCategory,
+      currentQuestionIndex,
+      categories,
+    },
+    quizDispatch,
+  ] = useReducer(quizReducer, quizInitialstate);
 
   useEffect(() => {
     (async () => {
@@ -24,7 +37,16 @@ const QuizProvider = ({ children }) => {
 
   return (
     <QuizContext.Provider
-      value={{ quiz, score, currentQuestionIndex, categories, quizDispatch }}
+      value={{
+        quiz,
+        score,
+        categories,
+        userResults,
+        leaderboard,
+        selectedCategory,
+        currentQuestionIndex,
+        quizDispatch,
+      }}
     >
       {children}
     </QuizContext.Provider>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, Rules, Category, Quiz, Result } from "./pages";
+import { Home, Category, Quiz, Result, Leaderboard } from "./pages";
 import { Navbar } from "./components";
 import { useTheme } from "./contexts";
 import "./App.css";
@@ -14,9 +14,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/rules/:quizId" element={<Rules />} />
         <Route path="/quiz/:quizId" element={<Quiz />} />
         <Route path="/result" element={<Result />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </div>
   );

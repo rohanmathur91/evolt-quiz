@@ -1,20 +1,31 @@
 import {
   SET_CATEGORIES,
   INITIALIZE_QUIZ,
-  SET_CURRENT_QUESTION_INDEX,
+  SET_LEADERBOARD,
+  SET_USER_RESULTS,
   SET_SELECTED_OPTION,
+  SET_CURRENT_QUESTION_INDEX,
 } from "./";
 
 export const quizInitialstate = {
   quiz: [],
   categories: [],
+  userResults: [],
+  leaderboard: [],
+  selectedCategory: "",
   currentQuestionIndex: 0,
 };
 
 export const quizReducer = (quizState, { type, payload }) => {
   switch (type) {
     case INITIALIZE_QUIZ:
-      return { ...quizState, quiz: payload, currentQuestionIndex: 0, score: 0 };
+      return {
+        ...quizState,
+        score: 0,
+        currentQuestionIndex: 0,
+        quiz: payload.quiz,
+        selectedCategory: payload.selectedCategory,
+      };
 
     case SET_CATEGORIES:
       return { ...quizState, categories: payload };
@@ -38,6 +49,12 @@ export const quizReducer = (quizState, { type, payload }) => {
             : eachQuiz
         ),
       };
+
+    case SET_LEADERBOARD:
+      return { ...quizState, leaderboard: payload };
+
+    case SET_USER_RESULTS:
+      return { ...quizState, userResults: payload };
 
     default:
       throw new Error(`${type} action type not found.`);

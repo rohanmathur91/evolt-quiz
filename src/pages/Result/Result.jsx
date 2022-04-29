@@ -1,11 +1,40 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import { useQuiz } from "../../contexts";
+import { SET_LEADERBOARD } from "../../reducers";
 import { getTotalScore } from "../../utils";
+import { encodedToken } from "../../token";
 import styles from "./Result.module.css";
 
 export const Result = () => {
-  const { quiz } = useQuiz();
+  const { quiz, quizDispatch, selectedCategory } = useQuiz();
   const totalScore = getTotalScore(quiz);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const {
+          data: { results },
+        } = await axios.post(
+          "/api/results",
+          {
+            result: {
+              totalScore,
+              username: "Adarsh Balika",
+              category: selectedCategory,
+            },
+          },
+          {
+            headers: { authorization: encodedToken },
+          }
+        );
+
+        quizDispatch({ type: SET_LEADERBOARD, payload: results });
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [totalScore, selectedCategory, quizDispatch]);
 
   return (
     <main className="main-container flex-column items-center mx-2">
@@ -17,17 +46,26 @@ export const Result = () => {
             Score: <span className="text-lg font-bold">{totalScore}</span>
           </div>
         </div>
-        <h3 className="my-2">Check Answers</h3>
+        <h3 className="mt-5">Check Answers</h3>
         {quiz.length > 0 &&
           quiz.map(
-            ({ _id: quizId, question, options, selectedOptionId, score }) => (
-              <div key={quizId} className="flex-column items-center w-100">
-                <p className="mt-5 title">{question}</p>
+            (
+              { _id: quizId, question, options, selectedOptionId, score },
+              index
+            ) => (
+              <div key={quizId} className="flex-column w-100">
+                <p className="mt-5 title">
+                  {index + 1}. {question}
+                </p>
 
                 {selectedOptionId ? (
-                  <p className="text-gray mt-1 mb-5 text-sm">{score} Points</p>
+                  <p className="text-gray text-center mt-1 mb-5 text-sm">
+                    {score} Points
+                  </p>
                 ) : (
-                  <p className="text-red mt-1 mb-5 text-sm">Not attempted</p>
+                  <p className="text-red text-center mt-1 mb-5 text-sm">
+                    Not attempted
+                  </p>
                 )}
 
                 {options.map(({ _id, option, isCorrect }) => (

@@ -4,26 +4,23 @@
   background-color: var(--navigation-background-color);
 }
 
-.heading {
+.logo {
   padding: 0 8px;
   font-size: 2rem;
   text-transform: none;
-}
-
-.themeBtn span {
-  font-size: 2.6rem;
   color: var(--primary-color);
 }
 
-.themeBtn {
-  padding: 6px;
+.navIcon {
+  margin-left: 4px;
 }
 
-.themeBtn:hover {
-  background: var(--secondary-hover-color);
+.navIcon span {
+  color: var(--primary-color);
 }
 
-.loginCta:hover {
+.active,
+.navIcon:hover {
   background: var(--secondary-hover-color);
 }
 

@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuiz } from "../../contexts";
 import { INITIALIZE_QUIZ } from "../../reducers";
-import { Score, CurrentQuestion, Loader } from "../../components";
+import { Rules, CurrentQuestion, Loader } from "../../components";
 import { encodedToken } from "../../token";
 
 export const Quiz = () => {
-  const [isloading, setIsLoading] = useState(false);
+  const [showRules, setShowRules] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { quizId } = useParams();
-  const { quizDispatch } = useQuiz();
+  const { quizDispatch, selectedCategory } = useQuiz();
 
   useEffect(() => {
     (async () => {
@@ -22,7 +23,10 @@ export const Quiz = () => {
             headers: { authorization: encodedToken },
           });
 
-          quizDispatch({ type: INITIALIZE_QUIZ, payload: quiz.quiz });
+          quizDispatch({
+            type: INITIALIZE_QUIZ,
+            payload: { quiz: quiz.quiz, selectedCategory: quiz.category },
+          });
           setIsLoading(false);
         } catch (error) {
           console.log(error);
@@ -33,14 +37,12 @@ export const Quiz = () => {
 
   return (
     <main className="main-container flex-column items-center mx-2">
-      <h3 className="text-underline mt-4">Quiz Time</h3>
-      {isloading ? (
+      {isLoading ? (
         <Loader />
+      ) : showRules ? (
+        <Rules category={selectedCategory} setShowRules={setShowRules} />
       ) : (
-        <div className="quiz-container w-100 flex-column items-center mt-3">
-          <Score />
-          <CurrentQuestion />
-        </div>
+        <CurrentQuestion />
       )}
     </main>
   );

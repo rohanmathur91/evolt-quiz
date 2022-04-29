@@ -15,11 +15,10 @@ export const CategoryCard = ({
       <img className={`${styles.image} rounded-sm`} src={image} alt={alt} />
       <h4 className="mt-2">{category}</h4>
       <p className="my-1">{title}</p>
-      <p className="text-sm text-gray mb-2">Play the quiz to test yourself.</p>
-      <div className="category-footer flex-row items-center">
-        <p className="text-gray">{numberOfquestions} Questions</p>
+      <div className="category-footer flex-row items-center mt-3">
+        <p className="text-sm text-gray">{numberOfquestions} Questions</p>
         <Link
-          to={`/rules/${_id}`}
+          to={`/quiz/${_id}`}
           className="cta primary-cta ml-auto rounded-sm transition-2"
         >
           Take quiz
