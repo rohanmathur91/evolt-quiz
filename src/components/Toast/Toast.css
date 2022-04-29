@@ -2,6 +2,8 @@
 .Toastify {
   --toastify-color-success: var(--success-color);
   --toastify-text-color-light: var(--text-color);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-color-progress-success: var(--success-color);
 }
 
 .Toastify__toast-container--top-right {

@@ -99,7 +99,7 @@ export const Login = () => {
 
         <button
           disabled={loading}
-          className="primary-cta btn-form w-100 font-semibold transition-2 mb-2 rounded-sm"
+          className="cta primary-cta btn-form w-100 font-semibold transition-2 mb-2 rounded-sm"
         >
           Login
         </button>

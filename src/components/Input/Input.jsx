@@ -26,9 +26,7 @@ export const Input = ({
       />
 
       {error && (
-        <div
-          className={`${styles.error} ${styles.validation__msg} text-base flex-row items-center mt-1`}
-        >
+        <div className={`${styles.error} text-base flex-row items-center mt-1`}>
           <span className="material-icons-outlined mr-1">error_outline</span>
           {error}
         </div>

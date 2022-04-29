@@ -17,7 +17,9 @@ export const loginService = async ({
       data: { foundUser, encodedToken },
     } = await axios.post("/api/auth/login", credentials);
 
-    setUser(foundUser);
+    const { _id, email, fullName } = foundUser;
+
+    setUser({ _id, email, fullName });
     localStorage.setItem("evoltQuizToken", encodedToken);
     showToast("success", "You logged in successfully");
     authFormDispatch({ type: SET_LOADING, payload: false });

@@ -11,7 +11,6 @@ import {
 } from "./pages";
 import { Navbar, PrivateRoute, Toast } from "./components";
 import { useTheme } from "./contexts";
-import Mockman from "mockman-js";
 import "./App.css";
 
 const App = () => {
@@ -31,7 +30,6 @@ const App = () => {
           <Route path="/result" element={<Result />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
         </Route>
-        <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>
   );
