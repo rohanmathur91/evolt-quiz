@@ -27,19 +27,20 @@ export const Profile = () => {
   }, [user, showToast, setIsLoading, quizDispatch]);
 
   return (
-    <main className="max-container main-container flex-column items-center">
-      <div className="flex-row flex-center mt-7 mb-4 border p-3 rounded-sm mx-2 wrap">
+    <main className="max-container main-container flex-column items-center pb-7">
+      <h3 className="mt-7 mb-2">Your Profile</h3>
+      <div className="flex-row flex-center border rounded-sm p-3 mx-2 wrap">
         <div
           className={`${styles.profileIcon} flex-row flex-center w-10 h-10 rounded-full mr-4`}
         >
           <span>{user.fullName.slice(0, 2).toUpperCase()}</span>
         </div>
         <div className="flex-row items-center content-space-between wrap">
-          <div className="my-2">
+          <div className="m-2">
             <p className="mb-1">
               <span className="font-semibold">Name:</span> {user.fullName}
             </p>
-            <p>
+            <p className={`${styles.email}`}>
               <span className="font-semibold">Email:</span> {user.email}
             </p>
           </div>
@@ -53,10 +54,23 @@ export const Profile = () => {
         </div>
       </div>
 
-      {!isLoading ? (
+      <div className={`${styles.container} py-2 w-100 flex-row items-center`}>
+        <Link to="/category" className="icon-container">
+          <span className="material-icons-outlined mr-1">west</span>
+          <span className={`${styles.playNowLink} text-base`}>Play Now</span>
+        </Link>
+
+        <Link to="/leaderboard" className="icon-container ml-auto">
+          <span className={`${styles.playNowLink} text-base`}>Leaderboard</span>
+          <span className="material-icons-outlined mr-1">east</span>
+        </Link>
+      </div>
+      <h3 className="text-center mb-4">Checkout your quiz results 👇🏼</h3>
+
+      {isLoading ? (
         <Loader />
       ) : userResults.length ? (
-        <ul className={`${styles.results} w-100 mt-4`}>
+        <ul className={`${styles.container} w-100 mt-4`}>
           {sortedResults.map((result) => (
             <li key={result._id}>
               <ResultCard {...result} />
@@ -66,13 +80,6 @@ export const Profile = () => {
       ) : (
         <p className="text-center mt-4 flex-row items-center">
           No results to show.
-          <Link
-            to="/category"
-            className={`${styles.categoryLink} text-base flex-row items-center ml-1`}
-          >
-            <span>Play some quiz</span>
-            <span class="material-icons-outlined ml-1">east</span>
-          </Link>
         </p>
       )}
     </main>

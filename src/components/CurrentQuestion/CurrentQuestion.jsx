@@ -55,7 +55,7 @@ export const CurrentQuestion = () => {
           score: isCorrect ? 5 : 0,
         },
       });
-      setTimeout(() => nextQuestion(), 1000);
+      setTimeout(() => nextQuestion(), 800);
     }
   };
 

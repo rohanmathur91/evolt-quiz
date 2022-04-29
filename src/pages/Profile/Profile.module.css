@@ -6,7 +6,24 @@
   font-size: 4rem;
 }
 
-.results {
+.email {
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.playNowLink {
+  flex-shrink: 0;
+  text-transform: none;
+}
+
+.playNowLink:hover {
+  text-decoration: underline;
+}
+
+.container {
   margin: 0 auto;
   max-width: 75rem;
 }

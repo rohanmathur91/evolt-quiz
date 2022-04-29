@@ -27,7 +27,7 @@ export const Leaderboard = () => {
           to="/category"
           className={`${styles.goBackLink} cta flex-row flex-center outlined-btn transition-2 rounded-sm ml-2`}
         >
-          <span className="material-icons-outlined mr-1">west</span> Go back
+          <span className="material-icons-outlined mr-1">west</span> Play now
         </Link>
 
         <h3 className="text-underline my-4 icon-container">
