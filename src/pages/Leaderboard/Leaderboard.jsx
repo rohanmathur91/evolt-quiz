@@ -21,29 +21,16 @@ export const Leaderboard = () => {
     fetchLeaderboard({ showToast, quizDispatch, setIsLoading });
   }, [showToast, quizDispatch]);
 
-  const handleClick = () => navigate(-1);
-
   return (
     <main className="main-container pb-5">
       <div className={`${styles.leaderboard} pt-4`}>
-        <div className={`${styles.container} w-100 flex-row items-center`}>
-          <button
-            onClick={handleClick}
-            className={`${styles.goBackBtn} icon-container`}
-          >
-            <span className="material-icons-outlined arrow-icon mr-1">
-              arrow_back
-            </span>
-            <span className={`${styles.link} text-base`}>Go back</span>
-          </button>
-
-          <Link to="/category" className="icon-container ml-auto">
-            <span className={`${styles.link} text-base`}>Category</span>
-            <span className="material-icons-outlined arrow-icon ml-1">
-              arrow_forward
-            </span>
-          </Link>
-        </div>
+        <Link
+          to="/category"
+          className={`${styles.categoryLink} icon-container`}
+        >
+          <span className="material-icons-outlined arrow-icon">arrow_back</span>
+          <span className={`${styles.link} text-base ml-1`}>Category</span>
+        </Link>
 
         <h3 className="text-underline my-4 icon-container">
           Leaderboard
