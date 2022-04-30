@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useQuiz } from "../../contexts";
 import { useToast, useScrollToTop, useDocumentTitle } from "../../hooks";
 import { fetchLeaderboard } from "../../services";
@@ -8,7 +8,6 @@ import { Loader, ResultCard } from "../../components";
 import styles from "./Leaderboard.module.css";
 
 export const Leaderboard = () => {
-  const navigate = useNavigate();
   const { showToast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const { leaderboard, quizDispatch } = useQuiz();
