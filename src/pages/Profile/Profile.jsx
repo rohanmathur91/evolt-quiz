@@ -56,13 +56,13 @@ export const Profile = () => {
 
       <div className={`${styles.container} py-2 w-100 flex-row items-center`}>
         <Link to="/category" className="icon-container">
-          <span className="material-icons-outlined mr-1">west</span>
-          <span className={`${styles.playNowLink} text-base`}>Play Now</span>
+          <span className="material-icons-outlined arrow-icon mr-1">west</span>
+          <span className={`${styles.link} text-base`}>Play Now</span>
         </Link>
 
         <Link to="/leaderboard" className="icon-container ml-auto">
-          <span className={`${styles.playNowLink} text-base`}>Leaderboard</span>
-          <span className="material-icons-outlined mr-1">east</span>
+          <span className={`${styles.link} text-base`}>Leaderboard</span>
+          <span className="material-icons-outlined arrow-icon ml-1">east</span>
         </Link>
       </div>
       <h3 className="text-center mb-4">Checkout your quiz results 👇🏼</h3>
