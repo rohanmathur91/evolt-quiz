@@ -1,5 +1,5 @@
-.goBackLink {
-  width: max-content;
+.goBackBtn {
+  color: var(--primary-color);
 }
 
 .link {

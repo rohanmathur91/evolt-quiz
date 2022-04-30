@@ -27,7 +27,10 @@ export const Leaderboard = () => {
     <main className="main-container pb-5">
       <div className={`${styles.leaderboard} pt-4`}>
         <div className={`${styles.container} w-100 flex-row items-center`}>
-          <button onClick={handleClick} className="icon-container">
+          <button
+            onClick={handleClick}
+            className={`${styles.goBackBtn} icon-container`}
+          >
             <span className="material-icons-outlined arrow-icon mr-1">
               arrow_back
             </span>
