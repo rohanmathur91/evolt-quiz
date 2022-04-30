@@ -55,7 +55,7 @@ export const CurrentQuestion = () => {
           score: isCorrect ? 5 : 0,
         },
       });
-      setTimeout(() => nextQuestion(), 1000);
+      setTimeout(() => nextQuestion(), 800);
     }
   };
 
@@ -107,7 +107,8 @@ export const CurrentQuestion = () => {
             to="/category"
             className={`${styles.quitLink} rounded-sm icon-container`}
           >
-            <span class="material-icons-outlined mr-1">highlight_off</span> Quit
+            <span className="material-icons-outlined mr-1">highlight_off</span>{" "}
+            Quit
           </Link>
 
           <button

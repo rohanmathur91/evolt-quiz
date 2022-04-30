@@ -1,0 +1,38 @@
+.profileIcon {
+  border: 1px solid var(--primary-color);
+}
+
+.profileIcon span {
+  font-size: 4rem;
+}
+
+.email {
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.playNowLink {
+  flex-shrink: 0;
+  text-transform: none;
+}
+
+.playNowLink:hover {
+  text-decoration: underline;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+.categoryLink {
+  padding: 0;
+  text-transform: none;
+}
+
+.categoryLink:hover {
+  text-decoration: underline;
+}

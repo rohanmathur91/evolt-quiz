@@ -30,10 +30,11 @@ export const getUserResults = function (schema, request) {
       }
     );
   }
+
   const results = schema.db.results.filter(
     ({ userId: id }) => "" + id === userId
   );
-  return new Response(200, {}, { results });
+  return new Response(200, {}, results);
 };
 
 export const addResult = function (schema, request) {

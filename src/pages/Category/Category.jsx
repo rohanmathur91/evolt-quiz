@@ -1,9 +1,13 @@
 import React from "react";
-import { CategoryCard } from "../../components";
 import { useQuiz } from "../../contexts";
+import { useScrollToTop, useDocumentTitle } from "../../hooks";
+import { CategoryCard } from "../../components";
 
 export const Category = () => {
   const { categories } = useQuiz();
+
+  useScrollToTop();
+  useDocumentTitle("Category");
 
   return (
     <main className="max-container main-container flex-column items-center">

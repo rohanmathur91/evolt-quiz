@@ -11,39 +11,3 @@
   margin: auto;
   max-width: 75rem;
 }
-
-.result {
-  box-shadow: var(--shadow);
-  background-color: var(--secondary-light-color);
-}
-
-.avatar {
-  flex-shrink: 0;
-  text-transform: uppercase;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
-}
-
-.name {
-  width: 100%;
-  max-width: 20rem;
-  overflow: hidden;
-  -webkit-line-clamp: 1;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-}
-
-.score,
-.category {
-  width: 100%;
-  max-width: 18rem;
-}
-
-.category p {
-  text-transform: capitalize;
-}
-
-.date {
-  flex-shrink: 0;
-}

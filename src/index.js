@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { QuizProvider, ThemeProvider } from "./contexts";
+import { AuthProvider, QuizProvider, ThemeProvider } from "./contexts";
 import App from "./App";
 import { makeServer } from "./server";
 
@@ -12,9 +12,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
-        <QuizProvider>
-          <App />
-        </QuizProvider>
+        <AuthProvider>
+          <QuizProvider>
+            <App />
+          </QuizProvider>
+        </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
