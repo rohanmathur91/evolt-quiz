@@ -1,3 +1,17 @@
+.container {
+  margin: 0 auto;
+  max-width: 75rem;
+}
+
+.link {
+  flex-shrink: 0;
+  text-transform: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 .option {
   cursor: auto;
   text-transform: none;

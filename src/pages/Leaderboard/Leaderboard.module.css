@@ -2,6 +2,14 @@
   width: max-content;
 }
 
+.link {
+  text-transform: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 .trophyIcon {
   font-size: 5rem;
   color: var(--yellow);

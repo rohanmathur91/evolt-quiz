@@ -29,7 +29,7 @@ export const Profile = () => {
   return (
     <main className="max-container main-container flex-column items-center pb-7">
       <h3 className="mt-7 mb-2">Your Profile</h3>
-      <div className="flex-row flex-center border rounded-sm p-3 mx-2 wrap">
+      <div className="flex-row flex-center border rounded-sm p-3 mx-2 wrap mb-2">
         <div
           className={`${styles.profileIcon} flex-row flex-center w-10 h-10 rounded-full mr-4`}
         >
@@ -56,13 +56,17 @@ export const Profile = () => {
 
       <div className={`${styles.container} py-2 w-100 flex-row items-center`}>
         <Link to="/category" className="icon-container">
-          <span className="material-icons-outlined arrow-icon mr-1">west</span>
+          <span className="material-icons-outlined arrow-icon mr-1">
+            arrow_back
+          </span>
           <span className={`${styles.link} text-base`}>Play Now</span>
         </Link>
 
         <Link to="/leaderboard" className="icon-container ml-auto">
           <span className={`${styles.link} text-base`}>Leaderboard</span>
-          <span className="material-icons-outlined arrow-icon ml-1">east</span>
+          <span className="material-icons-outlined arrow-icon ml-1">
+            arrow_forward
+          </span>
         </Link>
       </div>
       <h3 className="text-center mb-4">Checkout your quiz results 👇🏼</h3>

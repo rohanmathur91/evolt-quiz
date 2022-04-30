@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuiz } from "../../contexts";
 import { useToast, useScrollToTop, useDocumentTitle } from "../../hooks";
 import { fetchLeaderboard } from "../../services";
@@ -8,6 +8,7 @@ import { Loader, ResultCard } from "../../components";
 import styles from "./Leaderboard.module.css";
 
 export const Leaderboard = () => {
+  const navigate = useNavigate();
   const { showToast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const { leaderboard, quizDispatch } = useQuiz();
@@ -20,15 +21,26 @@ export const Leaderboard = () => {
     fetchLeaderboard({ showToast, quizDispatch, setIsLoading });
   }, [showToast, quizDispatch]);
 
+  const handleClick = () => navigate(-1);
+
   return (
     <main className="main-container pb-5">
       <div className={`${styles.leaderboard} pt-4`}>
-        <Link
-          to="/category"
-          className={`${styles.goBackLink} cta flex-row flex-center outlined-btn transition-2 rounded-sm ml-2`}
-        >
-          <span className="material-icons-outlined mr-1">west</span> Play now
-        </Link>
+        <div className={`${styles.container} w-100 flex-row items-center`}>
+          <button onClick={handleClick} className="icon-container">
+            <span className="material-icons-outlined arrow-icon mr-1">
+              arrow_back
+            </span>
+            <span className={`${styles.link} text-base`}>Go back</span>
+          </button>
+
+          <Link to="/category" className="icon-container ml-auto">
+            <span className={`${styles.link} text-base`}>Category</span>
+            <span className="material-icons-outlined arrow-icon ml-1">
+              arrow_forward
+            </span>
+          </Link>
+        </div>
 
         <h3 className="text-underline my-4 icon-container">
           Leaderboard
