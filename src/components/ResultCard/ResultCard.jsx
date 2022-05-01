@@ -14,12 +14,14 @@ export const ResultCard = ({ username, category, totalScore, createdAt }) => {
       <p className={`${styles.name}`}>{username}</p>
       <div className={`${styles.category} flex-column flex-center`}>
         <span className="text-xs text-gray mb-1">Category</span>
-        <p>{category}</p>
+        <div className="text-base">{category}</div>
       </div>
 
       <div className={`${styles.score} flex-column flex-center`}>
         <span className="text-xs text-gray mb-1">Score</span>
-        <p>{totalScore < 10 ? "0" + totalScore : totalScore}</p>
+        <div className="text-base">
+          {totalScore < 10 ? "0" + totalScore : totalScore}
+        </div>
       </div>
 
       <div className={`${styles.date} flex-column flex-center ml-auto`}>

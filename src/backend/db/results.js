@@ -12,7 +12,7 @@ export const results = [
   {
     _id: uuid(),
     userId: "adarsh-balika",
-    totalScore: 15,
+    totalScore: 10,
     category: "shows",
     username: "Adarsh Balika",
     createdAt: "Apr 17 2022",

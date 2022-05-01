@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useAuth, useQuiz } from "../../contexts";
 import { useToast, useScrollToTop, useDocumentTitle } from "../../hooks";
 import { saveResultService } from "../../services";
@@ -25,7 +26,22 @@ export const Result = () => {
   }, [user, showToast, totalScore, quizDispatch, selectedCategory]);
 
   return (
-    <main className="main-container flex-column items-center mx-2">
+    <main className="main-container flex-column pt-4 items-center mx-2">
+      <div className={`${styles.container} w-100 flex-row items-center`}>
+        <Link to="/category" className="icon-container">
+          <span className="material-icons-outlined arrow-icon mr-1">
+            arrow_back
+          </span>
+          <span className={`${styles.link} text-base`}>Category</span>
+        </Link>
+
+        <Link to="/leaderboard" className="icon-container ml-auto">
+          <span className={`${styles.link} text-base`}>Leaderboard</span>
+          <span className="material-icons-outlined arrow-icon ml-1">
+            arrow_forward
+          </span>
+        </Link>
+      </div>
       <h3 className="text-underline mt-4">Your Result 🎉</h3>
       <div className="quiz-container w-100 flex-column items-center mt-3 mb-6">
         <div className="w-100 flex-row items-center content-space-between">

@@ -1,5 +1,13 @@
-.goBackLink {
+.categoryLink {
   width: max-content;
+}
+
+.link {
+  text-transform: none;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .trophyIcon {

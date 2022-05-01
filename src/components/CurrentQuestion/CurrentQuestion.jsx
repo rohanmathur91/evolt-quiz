@@ -75,12 +75,16 @@ export const CurrentQuestion = () => {
 
       <div className="quiz-container w-100 flex-column items-center mt-3">
         <div className="w-100 flex-row content-space-between text-gray">
-          <div>
-            <span>Question: {currentQuestionIndex + 1}</span>
-          </div>
-          <div className="text-base font-bold">
-            Score: <span className="title font-bold">{totalScore}</span>
-          </div>
+          <span>
+            Question: {currentQuestionIndex + 1} / {quiz.length}
+          </span>
+
+          <span className="text-base">
+            Score:
+            <span className="title ml-1 font-bold">
+              {totalScore < 10 ? "0" + totalScore : totalScore}
+            </span>
+          </span>
         </div>
 
         <div className="flex-column w-100">

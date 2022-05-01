@@ -25,9 +25,10 @@ export const Leaderboard = () => {
       <div className={`${styles.leaderboard} pt-4`}>
         <Link
           to="/category"
-          className={`${styles.goBackLink} cta flex-row flex-center outlined-btn transition-2 rounded-sm ml-2`}
+          className={`${styles.categoryLink} icon-container`}
         >
-          <span className="material-icons-outlined mr-1">west</span> Play now
+          <span className="material-icons-outlined arrow-icon">arrow_back</span>
+          <span className={`${styles.link} text-base ml-1`}>Category</span>
         </Link>
 
         <h3 className="text-underline my-4 icon-container">

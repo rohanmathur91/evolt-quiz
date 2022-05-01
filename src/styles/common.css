@@ -38,6 +38,11 @@
   background-color: var(--primary-color);
 }
 
+/* icon */
+.arrow-icon {
+  font-size: 1.8rem;
+}
+
 /* forms */
 .login-form,
 .signup-form {
