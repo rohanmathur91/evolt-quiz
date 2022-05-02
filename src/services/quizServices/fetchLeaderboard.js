@@ -1,6 +1,5 @@
 import axios from "axios";
 import { SET_LEADERBOARD } from "../../reducers";
-import { encodedToken } from "../../token";
 
 export const fetchLeaderboard = async ({
   showToast,
@@ -12,7 +11,7 @@ export const fetchLeaderboard = async ({
     const {
       data: { results },
     } = await axios.get("/api/results", {
-      headers: { authorization: encodedToken },
+      headers: { authorization: localStorage.getItem("evoltQuizToken") },
     });
 
     quizDispatch({ type: SET_LEADERBOARD, payload: results });

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { INITIALIZE_QUIZ } from "../../reducers";
-import { encodedToken } from "../../token";
 
 export const fetchQuiz = async ({
   quizId,
@@ -14,7 +13,7 @@ export const fetchQuiz = async ({
       const {
         data: { quiz },
       } = await axios.get(`/api/quiz/${quizId}`, {
-        headers: { authorization: encodedToken },
+        headers: { authorization: localStorage.getItem("evoltQuizToken") },
       });
 
       quizDispatch({

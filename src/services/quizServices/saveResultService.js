@@ -1,6 +1,5 @@
 import axios from "axios";
 import { SET_LEADERBOARD } from "../../reducers";
-import { encodedToken } from "../../token";
 
 export const saveResultService = async ({
   user,
@@ -23,7 +22,7 @@ export const saveResultService = async ({
         },
       },
       {
-        headers: { authorization: encodedToken },
+        headers: { authorization: localStorage.getItem("evoltQuizToken") },
       }
     );
 
