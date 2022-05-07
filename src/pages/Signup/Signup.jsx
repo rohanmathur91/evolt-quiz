@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts";
 import {
@@ -14,7 +14,7 @@ import { Input } from "../../components";
 
 export const Signup = () => {
   const navigate = useNavigate();
-  const { setUser } = useAuth();
+  const { user, setUser } = useAuth();
   const {
     loading,
     showPassword,
@@ -34,6 +34,12 @@ export const Signup = () => {
     signUpErrorInitialState
   );
   const { showToast } = useToast();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  }, [user, navigate]);
 
   useScrollToTop();
   useDocumentTitle("Signup");

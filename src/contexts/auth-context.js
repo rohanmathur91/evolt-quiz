@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from "react";
+import { useState, useContext, createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext({
@@ -8,11 +8,19 @@ const AuthContext = createContext({
 });
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const encodedToken = localStorage.getItem("evoltQuizToken");
+    if (encodedToken) {
+      setUser(JSON.parse(localStorage.getItem("evoltQuizUser")));
+    }
+  }, []);
 
   const handleLogout = () => {
     setUser(null);
+    localStorage.removeItem("evoltQuizUser");
     localStorage.removeItem("evoltQuizToken");
     navigate("/");
   };

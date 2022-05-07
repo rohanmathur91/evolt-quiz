@@ -21,8 +21,11 @@ export const loginService = async ({
 
     setUser({ _id, email, fullName });
     localStorage.setItem("evoltQuizToken", encodedToken);
+    localStorage.setItem("evoltQuizUser", JSON.stringify(foundUser));
+
     showToast("success", "You logged in successfully");
     authFormDispatch({ type: SET_LOADING, payload: false });
+
     navigate(location.state?.from?.pathname ?? "/", { replace: true });
   } catch (error) {
     setError("Email or password is incorrect");

@@ -21,6 +21,8 @@ export const signupService = async ({
 
     setUser({ _id, email, fullName });
     localStorage.setItem("evoltQuizToken", encodedToken);
+    localStorage.setItem("evoltQuizUser", JSON.stringify(createdUser));
+
     authFormDispatch({ type: SET_LOADING, payload: false });
     showToast("success", "You signup successfully.");
     navigate("/");
