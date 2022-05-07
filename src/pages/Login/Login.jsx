@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts";
 import {
@@ -24,13 +24,19 @@ export const Login = () => {
     email: "",
     password: "",
   });
-  const { setUser } = useAuth();
+  const { user, setUser } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const { showToast } = useToast();
 
   useScrollToTop();
   useDocumentTitle("Login");
+
+  useEffect(() => {
+    if (user) {
+      navigate(location.state?.from?.pathname ?? "/", { replace: true });
+    }
+  }, [user, navigate, location]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
