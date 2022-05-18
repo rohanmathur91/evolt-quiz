@@ -1,1 +1,1 @@
-export * from "./homeBanner";
+export * from "./images";

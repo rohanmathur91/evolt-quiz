@@ -9,6 +9,7 @@ import {
   Result,
   Profile,
   Leaderboard,
+  NotFoundRoute,
 } from "./pages";
 import { Navbar, PrivateRoute, Toast } from "./components";
 import { useTheme } from "./contexts";
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/result" element={<Result />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
         </Route>
+        <Route path="*" element={<NotFoundRoute />} />
       </Routes>
     </div>
   );
