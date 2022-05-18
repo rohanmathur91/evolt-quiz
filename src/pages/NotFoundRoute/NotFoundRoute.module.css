@@ -1,0 +1,11 @@
+.notFoundImage {
+  width: 25rem;
+}
+
+.link {
+  text-transform: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
